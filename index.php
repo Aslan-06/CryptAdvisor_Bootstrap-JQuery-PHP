@@ -10,7 +10,9 @@
 </head>
 
 <body>
-    require_once("header.html");
+    <?php
+        require_once("header.html");
+    ?>
 </body>
 
 </html>
