@@ -1,9 +1,18 @@
 /***********     HEADER    **********/
-header {
+#header {
     height:117px;
+    border: 1px black solid;
 }
 
-#logo {
+#lien_logo{
+    display: block;
+}
+
+#img_logo {
     width:154px;
     height:60px;
+}
+
+nav {
+    float: right;
 }
