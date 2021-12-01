@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -11,7 +10,7 @@
 
 <body>
     <?php
-        require_once("header.html");
+       require_once("header.html");
     ?>
 </body>
 
