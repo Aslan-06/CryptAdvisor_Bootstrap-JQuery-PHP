@@ -1,0 +1,68 @@
+/***********     HEADER    **********/
+body{
+    background: #0b0e11;
+}
+
+#header {
+    height:117px;
+    background-color: #181a20;
+    
+}
+
+#lien_logo{
+    width:154px;
+    height:60px;
+    display: block;
+}
+
+#img_logo {
+    width:154px;
+    height:60px;
+}
+
+nav {
+    width:396px;
+    height:35px;
+    color:white;
+    text-align:center;
+	display: block;
+    
+	border:1px white dashed;
+    float:right;
+}
+nav a{
+    color: white;
+    text-decoration:none;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+ }
+nav :hover{
+    color: #fec63d;
+}
+
+.btns_connexion :hover{
+    background-color: #fec63d;
+    color:#606060;
+}
+.btns_connexion{
+    width:140px;
+    height:61px;
+    text-align: center;
+    display: block;
+    float: right;
+
+    border: 1px red solid;
+}
+.btns_connexion a{
+    margin-top:5px;
+    width:20px;
+    height:28px;
+    color: white;
+    text-decoration:none;
+    font-family: 'Helvetica';
+    font-weight: regular;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px red solid;
+}
