@@ -1,21 +1,38 @@
-<header id="header">
-    <a id="lien_logo" href="index.php"> 
-            <img id="img_logo" src="logo CryptAdvisor.png" alt="Logo de site CryptAdvisor"/> 
-    </a>
+<!DOCTYPE html>
 
-    <nav>
-        <a href="index.php">Accueil</a>
-		<a href="cours.php">cours</a>
-		<a href="articles.php">Articles</a>
-		<a href="forum.php">Forum</a>
-        <a href="membre_premium.php">Membre Premium</a>
-    </nav>
+<html lang="fr">
 
-    <a id="btn_seconnecter" href="connexion.php">
-        Se Connecter
-    </a>
+<head>
+    <meta charset="UTF-8">
+    <title>Crypt Advisor</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
 
-    <a id="btn_sinscrire" href="connexion.php">
-        S'inscrire
-    </a>
-</header>
+<body>
+    <header id="header">
+        <a id="lien_logo" href="index.php"> 
+                <img id="img_logo" src="logo CryptAdvisor.png" alt="Logo de site CryptAdvisor" class="w-14 h-auto"/> 
+        </a>
+
+        <nav class="space-x-8 hover:text-red-400">
+            <a href="index.php">Accueil</a>
+            <a href="cours.php">Cours</a>
+            <a href="articles.php">Articles</a>
+            <a href="forum.php">Forum</a>
+            <a href="membre_premium.php">Membre Premium</a>
+        </nav>
+
+        <div class="btns_connexion">
+            <a href="connexion.php">
+                Se Connecter
+            </a>
+
+            <a href="connexion.php">
+                S'inscrire
+            </a>
+        </div>
+    </header>
+
+</body>
+
+</html>
