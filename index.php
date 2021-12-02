@@ -1,17 +1,20 @@
-<!DOCTYPE html>
+<?php
+    require_once "./connexion.php";
 
-<html lang="fr">
+    if(isset($_GET['module'])){
+        $module = $_GET['module'];
+    }
+    
+    switch($module){
+        case"ModJoueurs":
+        case"Equipes":
+        case"Authentification":
+            require_once "./modules/$module/$module.php";      
+        break;
+        default:
+            die("Interdiction d'accès à ce module");
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <title>Crypt Advisor</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-
-<body>
-    <?php
-       require_once("header.html");
-    ?>
-</body>
-
-</html>
+    Connexion::initConnexion();
+    new $module();
+?>
