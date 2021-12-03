@@ -1,16 +1,13 @@
 <?php
-include "./modele.php";
 include "./vue.php";
 require_once "./connexion.php";
 
     class Controleur extends Connexion {
-        private $modele;
         private $vue;
         private $tab;
         private $action;
 
         public function __construct() {
-            $this->modele = new Modele();
             $this->vue = new Vue();
             $this->action = $this->recupererAction();
 
@@ -29,7 +26,7 @@ require_once "./connexion.php";
         }
 
         function bienvenue() {
-            $this->vue->menu();
+            $this->vue_generique->getAffichage('Authentification/inscription.php');
         }
 
     }
