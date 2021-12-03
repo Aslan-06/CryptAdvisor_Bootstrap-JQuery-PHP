@@ -4,65 +4,78 @@ body{
 }
 
 #header {
-    height:117px;
+    height:236px;
     background-color: #181a20;
     
 }
-
-#lien_logo{
-    width:154px;
-    height:60px;
-    display: block;
-}
-
 #img_logo {
-    width:154px;
-    height:60px;
+    width:308px;
+    height:120px;
+}
+#lien_logo{
+    margin-left: 88px;
+    margin-top: 58px;
+    width:308px;
+    height:120px;
+    display: block;
+    float: left;
 }
 
-nav {
-    width:396px;
-    height:35px;
-    color:white;
-    text-align:center;
-	display: block;
-    
-	border:1px white dashed;
-    float:right;
+#navEtBtns_connexion{
+    display:block;
+    float: right;
+    margin-top: 62px;
+    margin-right: 88px;
+    height:124px;
 }
-nav a{
-    color: white;
-    text-decoration:none;
-    font-family: 'Open Sans';
-    font-weight: 600;
-    font-size: 14px;
- }
+nav {
+    width:720px;
+    height: 4px5px;
+    margin-top: 76px;
+    margin-right:260px;
+    color:white;
+	display: block;
+    float: left;
+}
 nav :hover{
     color: #fec63d;
 }
+nav a{
+    text-decoration:none;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 21px;
+    text-align:center;
+    color:white;
+    padding-left:15px;
+    padding-right:16px;
+ }
+ .border_right{
+     border-right: 2px white solid;
+ }
 
+.btns_connexion{
+    width:171px;
+    height:124px;
+    text-align: center;
+    display: block;
+    float: right;
+}
 .btns_connexion :hover{
     background-color: #fec63d;
     color:#606060;
 }
-.btns_connexion{
-    width:140px;
-    height:61px;
-    text-align: center;
-    display: block;
-    float: right;
-
-    border: 1px red solid;
-}
 .btns_connexion a{
-    margin-top:5px;
-    width:20px;
-    height:28px;
+    width:171px;
+    height:42px;
+    margin-bottom: 20px;
+    background-color: #606060;
     color: white;
     text-decoration:none;
     font-family: 'Helvetica';
-    font-weight: regular;
-    font-size: 14px;
-    border-radius: 6px;
-    border: 1px red solid;
+    font-weight: 400;
+    font-size: 21px;
+    text-align: center;
+    border-radius: 12px;
+    display:block;
 }
