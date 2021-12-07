@@ -1,6 +1,6 @@
 <?php
-require_once "./modules/Authentification/vue_connexion.php";
-require_once "./modules/Authentification/modele_connexion.php";
+require_once "./Modules/Authentification/vue_connexion.php";
+require_once "./Modules/Authentification/modele_connexion.php";
 
 class ContConnexion{
     private $modele;
@@ -14,7 +14,7 @@ class ContConnexion{
     
     public function connexion(){
         if(empty($_SESSION['email']))
-            $this->vue->connexion();
+            //$this->vue->connexion();
     }
 
     public function connexionform(){
@@ -32,7 +32,7 @@ class ContConnexion{
                 if($verifPassword){
                     if(session_status()== PHP_SESSION_DISABLED) session_start();
                     $_SESSION['email'] = $email;
-                    $this->profile();
+                    //$this->profile();
                 } else{
                     echo"Mot de passe incorrect";
                 }
@@ -41,7 +41,7 @@ class ContConnexion{
         }
     }
     public function inscription(){
-        $this->vue->inscription();
+        //$this->vue->inscription();
     }
 
     public function inscriptionForm(){
@@ -53,11 +53,11 @@ class ContConnexion{
             $nom = htmlspecialchars($_POST['nom']);
             $email = htmlspecialchars($_POST['email']);
             $password =htmlspecialchars( $_POST['password']);
-            $user = $this->modele->getUser($email);
+            //$user = $this->modele->getUser($email);
             if(empty($user)){
                 $password = password_hash($password,PASSWORD_BCRYPT);
                 $data = array('nom'=>$nom,'email'=>$email,'password'=>$password);
-                $this->modele->createUser($data);
+                //$this->modele->createUser($data);
                 echo"Inscription validée";
             } else {
                 echo"Cet e-mail est déja utilisé";
@@ -70,12 +70,12 @@ class ContConnexion{
     public function deconnexion(){
         if(!empty($_SESSION['email']))
             unset($_SESSION['email']);
-        include_once "connexion.php";
+        //include_once "connexion.php";
 
     }
 
     public function profile(){
-        $this->vue->profile();
+        //$this->vue->profile();
     }
 
 

@@ -6,10 +6,8 @@
     }
     
     switch($module){
-        case"ModJoueurs":
-        case"Equipes":
         case"Authentification":
-            require_once "./modules/$module/$module.php";      
+            require_once "./Modules/$module/$module.php";      
         break;
         default:
             die("Interdiction d'accès à ce module");

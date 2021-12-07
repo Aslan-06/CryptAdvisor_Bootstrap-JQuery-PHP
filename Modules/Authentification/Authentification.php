@@ -1,6 +1,6 @@
 
 <?php
-require_once './modules/Authentification/cont_Connexion.php';
+require_once './Modules/Authentification/cont_Connexion.php';
 class Authentification {
     private $action;
     private $controleur;
@@ -23,21 +23,6 @@ class Authentification {
 
             case "connexion":
                 $this->controleur->connexion();
-                break;
-            case "connexionForm":
-                $this->controleur->connexionform();
-                break;
-            case "inscription":
-                $this->controleur->inscription();
-                break;
-            case "inscriptionForm":
-                $this->controleur->inscriptionForm();
-                break;
-            case "deconnexion":
-                $this->controleur->deconnexion();
-                break;
-            case "profil":
-                $this->controleur->profile();
                 break;
             default:
                 echo"accès interdit";
