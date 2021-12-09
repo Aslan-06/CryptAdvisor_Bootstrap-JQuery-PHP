@@ -32,7 +32,7 @@ class ContConnexion{
                 if($verifPassword){
                     if(session_status()== PHP_SESSION_DISABLED) session_start();
                     $_SESSION['email'] = $email;
-                    //$this->profile();
+                    $this->profile();
                 } else{
                     echo"Mot de passe incorrect";
                 }
@@ -41,26 +41,27 @@ class ContConnexion{
         }
     }
     public function inscription(){
-        //$this->vue->inscription();
+        $this->vue->inscription();
     }
 
     public function inscriptionForm(){
 
-        if (!isset($_POST['nom']) or !isset($_POST['email']) or !isset($_POST['password']) or empty($_POST['nom']) or empty($_POST['email']) or empty($_POST['password'])) {
+        if (!isset($_POST['nom']) or !isset($_POST['email']) or !isset($_POST['prenom']) or !isset($_POST['pseudo']) or !isset($_POST['password']) or empty($_POST['nom']) or empty($_POST['email']) or empty($_POST['password'])) {
 
             echo"Tous les champs doivent être remplis!";
         } else {
             $nom = htmlspecialchars($_POST['nom']);
             $email = htmlspecialchars($_POST['email']);
             $password =htmlspecialchars( $_POST['password']);
-            //$user = $this->modele->getUser($email);
-            if(empty($user)){
+            $useremail = $this->modele->getUser($email);
+            $userpseudo = $this->modele->getUser($pseudo);
+            if(empty($user) && empty(pseudo)){
                 $password = password_hash($password,PASSWORD_BCRYPT);
                 $data = array('nom'=>$nom,'email'=>$email,'password'=>$password);
-                //$this->modele->createUser($data);
+                $this->modele->createUser($data);
                 echo"Inscription validée";
             } else {
-                echo"Cet e-mail est déja utilisé";
+                echo"L'email ou le pseudo entré est déja utilisé";
             }
         }
 
@@ -70,12 +71,12 @@ class ContConnexion{
     public function deconnexion(){
         if(!empty($_SESSION['email']))
             unset($_SESSION['email']);
-        //include_once "connexion.php";
+        include_once "connexion.php";
 
     }
 
     public function profile(){
-        //$this->vue->profile();
+        $this->vue->profile();
     }
 
 

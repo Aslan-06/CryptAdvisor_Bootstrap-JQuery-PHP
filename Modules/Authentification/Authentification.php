@@ -22,7 +22,7 @@ class Authentification {
         switch ($toDO){
 
             case "connexion":
-                $this->controleur->connexion();
+                $this->controleur->inscription();
                 break;
             default:
                 echo"accès interdit";

@@ -2,7 +2,6 @@
 
     class VueGenerique {
 
-
         function getAffichage($path,$data=null){
             ob_start();
             include_once "Templates/$path";
