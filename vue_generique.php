@@ -7,9 +7,9 @@
             ob_start();
             include_once "Templates/$path";
             $contenu = ob_get_clean();
-            include_once "Templates/corps/header.php";
+            include_once "Templates/corps/header.html";
             echo $contenu;
-            include_once "Templates/corps/footer.php";
+            include_once "Templates/corps/footer.html";
         }
     } 
 ?>

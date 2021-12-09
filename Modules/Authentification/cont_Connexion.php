@@ -14,7 +14,7 @@ class ContConnexion{
     
     public function connexion(){
         if(empty($_SESSION['email']))
-            //$this->vue->connexion();
+            $this->vue->connexion();
     }
 
     public function connexionform(){

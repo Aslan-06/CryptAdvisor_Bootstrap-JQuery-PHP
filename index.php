@@ -6,11 +6,12 @@
     }
     
     switch($module){
-        case"Authentification":
-            require_once "./Modules/$module/$module.php";      
-        break;
+        // case"Authentification":
+        //     require_once "./Modules/$module/$module.php";      
+        // break;
         default:
-            die("Interdiction d'accès à ce module");
+            //die("Interdiction d'accès à ce module");
+            require_once "./Modules/Authentification/Authentification.php";
     }
 
     Connexion::initConnexion();
