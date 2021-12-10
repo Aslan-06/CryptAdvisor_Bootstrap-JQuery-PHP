@@ -41,7 +41,7 @@ class ContConnexion{
         }
     }
     public function inscription(){
-        //$this->vue->inscription();
+        $this->vue->inscription();
     }
 
     public function inscriptionForm(){

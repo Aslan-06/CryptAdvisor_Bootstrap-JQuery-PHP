@@ -1,3 +1,5 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);/*Pour font OpenSans*/
+
 /***********     HEADER    **********/
 body{
     background: #0b0e11;
@@ -30,9 +32,9 @@ body{
 }
 nav {
     width:720px;
-    height: 4px5px;
+    height: 45px;
     margin-top: 76px;
-    margin-right:260px;
+    margin-right:100px;
     color:white;
 	display: block;
     float: left;
