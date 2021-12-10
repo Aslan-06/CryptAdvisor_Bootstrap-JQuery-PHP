@@ -22,8 +22,8 @@ class ContConnexion{
             echo"Tous les champs doivent être remplis!";
         } else {
             $email = htmlspecialchars($_POST['email']);
-            $password =htmlspecialchars( $_POST['password']);
-            $user = $this->modele->getUser($email);
+            $pseudo =htmlspecialchars( $_POST['pseudo']);
+            $user = $this->modele->getUser($email, $pseudo);
 
             if(empty($user)){
                 echo"Ce mail n'existe pas!";
@@ -51,13 +51,15 @@ class ContConnexion{
             echo"Tous les champs doivent être remplis!";
         } else {
             $nom = htmlspecialchars($_POST['nom']);
+            $prenom = htmlspecialchars($_POST['prenom']);
             $email = htmlspecialchars($_POST['email']);
-            $password =htmlspecialchars( $_POST['password']);
-            $useremail = $this->modele->getUser($email);
-            $userpseudo = $this->modele->getUser($pseudo);
-            if(empty($user) && empty(pseudo)){
+            $pseudo =htmlspecialchars( $_POST['pseudo']);
+            $password =htmlspecialchars($_POST['password']);
+            $user = $this->modele->getUser($email, $pseudo);
+           // $userpseudo = $this->modele->getUser($pseudo);
+            if(empty($user)){
                 $password = password_hash($password,PASSWORD_BCRYPT);
-                $data = array('nom'=>$nom,'email'=>$email,'password'=>$password);
+                $data = array('nom'=>$nom,'prenom'=>$prenom,'pseudo'=>$pseudo,'email'=>$email,'password'=>$password);
                 $this->modele->createUser($data);
                 echo"Inscription validée";
             } else {
