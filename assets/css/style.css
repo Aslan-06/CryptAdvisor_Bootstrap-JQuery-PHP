@@ -2,11 +2,12 @@
 
 /***********     HEADER    **********/
 body{
+    width: 99%;
     background: #0b0e11;
 }
 
 #header {
-    height:207px;
+    height:179px;
     background-color: #181a20;
     
 }
@@ -15,29 +16,27 @@ body{
     height:120px;
 }
 #lien_logo{
-    margin-left: 88px;
+    margin-left: 66px;
     margin-top: 29px;
     width:308px;
     height:120px;
-    display: block;
-    float: left;
+    display: inline-block;
 }
 
 #navEtBtns_connexion{
-    display:block;
-    float: right;
-    margin-top: 62px;
-    margin-right: 88px;
-    height:124px;
+    width:62%;
+    height:96px;
+    float:right;
+    margin-top: 42px;
+    margin-right: 66px;
 }
 nav {
-    width:720px;
-    height: 45px;
-    margin-top: 76px;
-    margin-right:100px;
+    width:auto;
+    height: auto;
     color:white;
-	display: block;
-    float: left;
+	display: inline-block;
+    margin-top: 66px;
+    text-align: bottom;
 }
 nav :hover{
     color: #fec63d;
@@ -47,7 +46,6 @@ nav a{
     font-family: 'Open Sans';
     font-weight: 600;
     font-size: 21px;
-    text-align:center;
     color:white;
     padding-left:15px;
     padding-right:16px;
@@ -58,7 +56,7 @@ nav a{
 
 .btns_connexion{
     width:171px;
-    height:124px;
+    height:96px;
     text-align: center;
     display: block;
     float: right;
@@ -69,7 +67,7 @@ nav a{
 }
 .btns_connexion a{
     width:171px;
-    height:42px;
+    height:38px;
     margin-bottom: 20px;
     background-color: #606060;
     color: white;
