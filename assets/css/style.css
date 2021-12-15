@@ -6,7 +6,7 @@ body{
 }
 
 #header {
-    height:236px;
+    height:207px;
     background-color: #181a20;
     
 }
@@ -16,7 +16,7 @@ body{
 }
 #lien_logo{
     margin-left: 88px;
-    margin-top: 58px;
+    margin-top: 29px;
     width:308px;
     height:120px;
     display: block;
