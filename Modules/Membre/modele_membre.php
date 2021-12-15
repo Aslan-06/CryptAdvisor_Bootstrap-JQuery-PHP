@@ -25,6 +25,11 @@ require_once "./connexion.php";
             $res = $req->fetchAll();
             return $res;
         }
+
+        function addUserPremium(){
+            $req = self::$bdd->prepare("UPDATE Utilisateur SET comptePremium = true where idUtilisateur = $id;");
+            $req->execute();
+        }
     }
 
 ?>

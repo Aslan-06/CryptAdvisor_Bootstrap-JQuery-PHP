@@ -56,7 +56,6 @@ class ContConnexion{
             $pseudo =htmlspecialchars( $_POST['pseudo']);
             $password =htmlspecialchars($_POST['password']);
             $user = $this->modele->getUser($email, $pseudo);
-           // $userpseudo = $this->modele->getUser($pseudo);
             if(empty($user)){
                 $password = password_hash($password,PASSWORD_BCRYPT);
                 $data = array('nom'=>$nom,'prenom'=>$prenom,'pseudo'=>$pseudo,'email'=>$email,'password'=>$password);
@@ -66,8 +65,6 @@ class ContConnexion{
                 echo"L'email ou le pseudo entré est déja utilisé";
             }
         }
-
-
     }
 
     public function deconnexion(){

@@ -6,18 +6,18 @@ class VueMembre extends VueGenerique{
     public function __construct(){}
 
     public function profil(){
-        $this->getAffichage('Authentification/profil.php');
+        $this->getAffichage('Membre/profil.php');
     }
 
     public function devenirpremium(){
-        $this->getAffichage('Authentification/devenirpremium.php');
+        $this->getAffichage('Membre/devenirpremium.php');
     }
 
     public function annulerAbonnement(){
-        $this->getAffichage('Authentification/annulerAbonnement.php');
+        $this->getAffichage('Membre/annulerAbonnement.php');
     }
 
     public function mesfavoris(){
-        $this->getAffichage('Authentification/mesfavoris.php');
+        $this->getAffichage('Membre/mesfavoris.php');
     }
 }
