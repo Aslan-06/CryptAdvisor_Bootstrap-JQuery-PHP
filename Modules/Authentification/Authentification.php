@@ -24,6 +24,9 @@ class Authentification {
             case "connexion":
                 $this->controleur->connexion();
                 break;
+            case "inscription":
+                $this->controleur->inscription();
+                break;
             default:
                 echo"accès interdit";
                 break;
