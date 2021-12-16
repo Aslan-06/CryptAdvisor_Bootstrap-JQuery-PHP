@@ -12,6 +12,14 @@ echo"
                 <label for='nom'>Nom</label>
             </div>
             <div class='form-floating mb-3'>
+                <input name='prenom' type='text' class='form-control' id='prenom' placeholder='Prenom'>
+                <label for='prenom'>Prenom</label>
+            </div>
+            <div class='form-floating mb-3'>
+                <input name='pseudo' type='text' class='form-control' id='pseudo' placeholder='Pseudo'>
+                <label for='pseudo'>Pseudo</label>
+            </div>
+            <div class='form-floating mb-3'>
                 <input name='email' type='email' class='form-control' id='email' placeholder='mail@exemple.com'>
                 <label for='email'>E-mail</label>
             </div>

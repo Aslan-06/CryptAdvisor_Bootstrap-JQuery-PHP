@@ -4,7 +4,6 @@ require_once "./connexion.php";
 
     class Controleur extends Connexion {
         private $vue;
-        private $tab;
         private $action;
 
         public function __construct() {
@@ -12,8 +11,8 @@ require_once "./connexion.php";
             $this->action = $this->recupererAction();
 
             switch ($this->action) {
-                case'bla':
-                    $this->bla();
+                case'bienvenue':
+                    $this->bienvenue();
             }
         }
 

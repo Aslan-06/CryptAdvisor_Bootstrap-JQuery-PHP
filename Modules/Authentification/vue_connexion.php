@@ -13,8 +13,8 @@ class VueConnexion extends VueGenerique{
         $this->getAffichage('Authentification/connexion.php');
     }
 
-    // public function profile(){
-    //     $this->getAffichage('Authentification/profil.php');
-    // }
+    public function profile(){
+        $this->getAffichage('Authentification/profil.php');
+    }
 
 }

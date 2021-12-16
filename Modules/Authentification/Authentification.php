@@ -22,7 +22,22 @@ class Authentification {
         switch ($toDO){
 
             case "connexion":
-                $this->controleur->connexion();
+                $this->controleur->inscription();
+                break;
+            case "connexionForm":
+                $this->controleur->connexionform();
+                break;
+            case "inscription":
+                $this->controleur->inscription();
+                break;
+            case "inscriptionForm":
+                $this->controleur->inscriptionForm();
+                break;
+            case "deconnexion":
+                $this->controleur->deconnexion();
+                break;
+            case "profil":
+                $this->controleur->profile();
                 break;
             default:
                 echo"accès interdit";
