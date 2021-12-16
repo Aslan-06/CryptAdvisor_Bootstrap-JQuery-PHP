@@ -23,6 +23,7 @@ class ContConnexion{
         } else {
             $email = htmlspecialchars($_POST['email']);
             $pseudo =htmlspecialchars( $_POST['pseudo']);
+            $password = htmlspecialchars($_POST['password']);
             $user = $this->modele->getUser($email, $pseudo);
 
             if(empty($user)){

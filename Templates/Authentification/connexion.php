@@ -10,6 +10,10 @@ echo"
                 <label for='email'>Votre email</label>
             </div>
             <div class='form-floating mb-3'>
+                <input name='pseudo' type='text' class='form-control' id='pseudo'>
+                <label for='pseudo'>Votre Pseudo</label>
+            </div>
+            <div class='form-floating mb-3'>
                 <input name='password' type='password' class='form-control' id='floatingPassword' placeholder='Mot de passe'>
                 <label for='floatingPassword'>Mot de passe</label>
             </div>
