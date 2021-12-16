@@ -1,0 +1,81 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);/*Pour font OpenSans*/
+
+/***********     HEADER    **********/
+body{
+    width: 99%;
+    background: #0b0e11;
+}
+
+#header {
+    height:179px;
+    background-color: #181a20;
+    
+}
+#img_logo {
+    width:308px;
+    height:120px;
+}
+#lien_logo{
+    margin-left: 66px;
+    margin-top: 29px;
+    width:308px;
+    height:120px;
+    display: inline-block;
+}
+
+#navEtBtns_connexion{
+    width:62%;
+    height:96px;
+    float:right;
+    margin-top: 42px;
+    margin-right: 66px;
+}
+nav {
+    width:auto;
+    height: auto;
+    color:white;
+	display: inline-block;
+    margin-top: 66px;
+    text-align: bottom;
+}
+nav :hover{
+    color: #fec63d;
+}
+nav a{
+    text-decoration:none;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 21px;
+    color:white;
+    padding-left:15px;
+    padding-right:16px;
+ }
+ .border_right{
+     border-right: 2px white solid;
+ }
+
+.btns_connexion{
+    width:171px;
+    height:96px;
+    text-align: center;
+    display: block;
+    float: right;
+}
+.btns_connexion :hover{
+    background-color: #fec63d;
+    color:#606060;
+}
+.btns_connexion a{
+    width:171px;
+    height:38px;
+    margin-bottom: 20px;
+    background-color: #606060;
+    color: white;
+    text-decoration:none;
+    font-family: 'Helvetica';
+    font-weight: 400;
+    font-size: 21px;
+    text-align: center;
+    border-radius: 12px;
+    display:block;
+}
