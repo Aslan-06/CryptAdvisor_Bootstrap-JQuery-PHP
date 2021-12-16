@@ -39,6 +39,9 @@ class Authentification {
             case "profil":
                 $this->controleur->profile();
                 break;
+            case "inscription":
+                $this->controleur->inscription();
+                break;
             default:
                 echo"accès interdit";
                 break;
