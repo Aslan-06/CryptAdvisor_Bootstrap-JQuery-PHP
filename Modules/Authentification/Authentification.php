@@ -22,7 +22,7 @@ class Authentification {
         switch ($toDO){
 
             case "connexion":
-                $this->controleur->inscription();
+                $this->controleur->connexion();
                 break;
             case "connexionForm":
                 $this->controleur->connexionform();
