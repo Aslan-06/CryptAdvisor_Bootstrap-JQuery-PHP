@@ -9,12 +9,13 @@ class ContConnexion{
     public function __construct(){
         $this->modele = new ModeleConnexion();
         $this->vue = new VueConnexion();
-
     }
     
     public function connexion(){
-        if(empty($_SESSION['email']))
+        if(empty($_SESSION['pseudo']))
             $this->vue->connexion();
+        else
+            echo("déjà co");
     }
 
     public function connexionform(){
@@ -31,8 +32,8 @@ class ContConnexion{
             } else {
                 $verifPassword = password_verify($password,$user->password);
                 if($verifPassword){
-                    if(session_status()== PHP_SESSION_DISABLED) session_start();
-                    $_SESSION['email'] = $email;
+                    //if(session_status()== PHP_SESSION_DISABLED) session_start();
+                    $_SESSION['pseudo'] = $pseudo;
                     $this->profile();
                 } else{
                     echo"Mot de passe incorrect";
@@ -69,8 +70,8 @@ class ContConnexion{
     }
 
     public function deconnexion(){
-        if(!empty($_SESSION['email']))
-            unset($_SESSION['email']);
+        if(!empty($_SESSION['pseudo']))
+            unset($_SESSION['pseudo']);
         include_once "connexion.php";
 
     }

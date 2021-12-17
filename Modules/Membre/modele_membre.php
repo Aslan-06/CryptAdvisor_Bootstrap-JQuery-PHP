@@ -2,7 +2,7 @@
 
 require_once "./connexion.php";
 
-    class ModeleEquipes extends Connexion{
+    class ModeleMembre extends Connexion{
         public function __construct() {}
 
         function getForumFav($id) {
@@ -26,9 +26,18 @@ require_once "./connexion.php";
             return $res;
         }
 
-        function addUserPremium(){
-            $req = self::$bdd->prepare("UPDATE Utilisateur SET comptePremium = true where idUtilisateur = $id;");
+        function addUserPremium($pseudo){
+            $req = self::$bdd->prepare("UPDATE Utilisateur SET comptePremium = 1 where pseudo = \"$pseudo\";");
+            //$req->bindParam(':pseudo',$pseudo);
             $req->execute();
+        }
+
+        function getPremiumUser($pseudo){
+            $req = self::$bdd->prepare("SELECT comptePremium FROM Utilisateur where pseudo = \"$pseudo\";");
+            //$req->bindParam(':pseudo',$pseudo);
+            $req->execute();
+            $res = $req->fetch();var_dump($res);
+            return $res;
         }
     }
 

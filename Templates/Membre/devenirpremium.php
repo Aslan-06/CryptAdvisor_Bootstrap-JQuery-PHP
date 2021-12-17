@@ -6,7 +6,7 @@ echo"
         <div class='col-sm-12 col-md-5'>
             <h3 class='text-muted mb-4'>Devenir premium pour seulement 39.99$/mois</h3>
             <div class='form-floating mb-3'>
-                <input name='Nomsurlacarte' type='text' class='form-control' id='Nomcarte' placeholder=''>
+                <input name='Nomcarte' type='text' class='form-control' id='Nomcarte' placeholder=''>
                 <label for='Nomcarte'>Nom sur la carte</label>
             </div>
             <div class='form-floating mb-3'>
@@ -22,8 +22,8 @@ echo"
                 <label for='cardnumber'>Security code</label>
             </div>
             <div class='form-floating mb-3'>
-                <input name='cardnumber' type='text' class='form-control' id='floatingPassword' >
-                <label for='floatingPassword'>ZIP/Postal code</label>
+                <input name='postalcode' type='text' class='form-control' id='postalcode' >
+                <label for='postalcode'>ZIP/Postal code</label>
             </div>
             <div class='col-12'>
                 <button class='btn btn-primary' type='submit'>Souscrire à un abonnement</button>
