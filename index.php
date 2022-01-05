@@ -9,7 +9,11 @@
     else{
         $module = "Accueil";
     }
-    
+
+    if (!in_array($module, ["Accueil", "Authentification"])) {
+        die("Unauthorized");
+    }
+
     require_once "./Modules/$module/$module.php"; 
 
     Connexion::initConnexion();

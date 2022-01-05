@@ -24,13 +24,19 @@
             </nav>
 
             <div class="btns_connexion">
+                <?php if (!isset($_SESSION['pseudo'])){?>
                 <a href="index.php?module=Authentification&action=connexion">
                     Se Connecter
                 </a>
-
                 <a href="index.php?module=Authentification&action=inscription">
                     S'inscrire
                 </a>
+                <?php } else { ?>
+
+                <a href="index.php?module=Authentification&action=deconnexion">
+                    Déconnexion
+                </a>
+                <?php } ?>
             </div>
         </div>
     </header>

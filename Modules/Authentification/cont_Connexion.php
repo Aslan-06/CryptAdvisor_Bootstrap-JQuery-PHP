@@ -26,14 +26,16 @@ class ContConnexion{
             $pseudo =htmlspecialchars( $_POST['pseudo']);
             $password = htmlspecialchars($_POST['password']);
             $user = $this->modele->getUser($email, $pseudo);
+            
 
             if(empty($user)){
                 echo"Ce mail n'existe pas!";
             } else {
                 $verifPassword = password_verify($password,$user->password);
                 if($verifPassword){
-                    //if(session_status()== PHP_SESSION_DISABLED) session_start();
+                    if(session_status()== PHP_SESSION_DISABLED) session_start();
                     $_SESSION['pseudo'] = $pseudo;
+                    // $_SESSION['id']=$id;
                     $this->profile();
                 } else{
                     echo"Mot de passe incorrect";
@@ -64,21 +66,21 @@ class ContConnexion{
                 $this->modele->createUser($data);
                 echo"Inscription validée";
             } else {
-                echo"L'email ou le pseudo entré est déja utilisé";
+                $erreur = "L'email ou le pseudo entré est déja utilisé";
             }
         }
     }
 
     public function deconnexion(){
-        if(!empty($_SESSION['pseudo']))
+        if(!empty($_SESSION['pseudo'])){
+            echo("vs ete deko");
             unset($_SESSION['pseudo']);
+        }
         include_once "connexion.php";
-
     }
 
     public function profile(){
         $this->vue->profile();
     }
-
 
 }
