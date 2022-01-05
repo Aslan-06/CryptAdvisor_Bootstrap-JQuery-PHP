@@ -18,7 +18,7 @@
             <nav>
                 <a class="border_right" href="index.php?module=Accueil">Accueil</a>
                 <a class="border_right" href="index.php?module=Cours">Cours</a>
-                <a class="border_right" href="index.php?module=Articles">Articles</a>
+                <a class="border_right" href="index.php?module=Article">Articles</a>
                 <a class="border_right" href="index.php?module=Forum">Forum</a>
                 <a href="index.php?module=Membre&action=premiumform">Membre Premium</a>
             </nav>
