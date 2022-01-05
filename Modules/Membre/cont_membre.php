@@ -16,7 +16,6 @@ class ContMembre{
             $this->vue->devenirpremium();
         }
         else if ((!empty($_SESSION['pseudo']) && ($this->modele->getPremiumUser($_SESSION['pseudo'])->comptePremium=="1"))){
-            echo("annuler abonnement");
             $this->vue->annulerAbonnement();
         }
     }
@@ -28,6 +27,10 @@ class ContMembre{
             $this->modele->addUserPremium($_SESSION['pseudo']);
             echo"vs êtes maintenant premium";
          }
+    }
+
+    public function annulerAbonnement(){
+        $this->modele->removeUserPremium($_SESSION['pseudo']);
     }
 
     public function annulerAbonnementform(){

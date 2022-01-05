@@ -10,7 +10,7 @@
         $module = "Accueil";
     }
 
-    if (!in_array($module, ["Accueil", "Authentification"])) {
+    if (!in_array($module, ["Accueil", "Authentification", "Membre"])) {
         die("Unauthorized");
     }
 
