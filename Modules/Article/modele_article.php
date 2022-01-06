@@ -7,6 +7,7 @@ class ModeleArticle extends Connexion {
     public function getArticles(){
         $req = self::$bdd->prepare("SELECT titre, contenuArticle, nbVues, likes, dateCreaArticle FROM Article");
         $req->execute();
-        return $req->fetchAll();
+        $articles = $req->fetchAll(PDO::FETCH_ASSOC);
+        return $articles;
     }
 }
