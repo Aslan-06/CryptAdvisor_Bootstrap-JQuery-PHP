@@ -7,11 +7,8 @@
         //tous les attributs de tuple courrant
         $idArticle = $article['idArticle'];
         $titreArticle = $article['titre'];
-        $idUtilisateur = $article['idUtilisateur'];
         $nbVues = $article['nbVues'];
         $likes = $article['likes'];
         $dateCreaArticle = $article['dateCreaArticle'];
-        $contenuArticle = $article['contenuArticle'];
-        
     }
 ?>

@@ -11,8 +11,17 @@ class ContArticle{
         $this->vue = new VueArticle();
     }
 
-    public function afficher(){
-        $articles = $this->modele->getArticles();
-        $this->vue->afficherArticles($articles);
+    public function afficherListe(){
+        $listeArticles = $this->modele->getArticles();
+        $this->vue->afficherListe($listeArticles);
+    }
+
+    public function afficherArticle(){
+        $idArticle = $_GET['idArticle'];
+        $article = $this->modele->getArticle($idArticle);
+    }
+
+    public function creerArticle(){
+
     }
 }

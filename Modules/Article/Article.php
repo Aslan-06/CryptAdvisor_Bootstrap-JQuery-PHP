@@ -12,7 +12,7 @@ class Article {
 
     public function setAction(){
         if(!isset($_GET['action'])){
-            $_GET['action'] = "lecture";
+            $_GET['action'] = "liste";
         }
         return $_GET["action"];
     }
@@ -20,11 +20,14 @@ class Article {
     public function render($toDO){
         switch ($toDO){
 
-            case "lecture":
-                $this->controleur->afficher();
+            case "liste":
+                $this->controleur->afficherListe();
+                break;
+            case "article":
+                $this->controleur->afficherArticle();
                 break;
             case "creation":
-                $this->controleur->creer();
+                $this->controleur->creerArticle();
                 break;
             default:
                 echo"accès interdit";
