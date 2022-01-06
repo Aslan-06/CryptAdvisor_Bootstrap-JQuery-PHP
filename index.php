@@ -1,7 +1,6 @@
 <?php
     if(session_status() == PHP_SESSION_NONE){
         session_start();
-        $_SESSION['modulesAAfficher'] = array('joueurs', 'equipes', 'inscription', 'connexion');
     }
     
     require_once "./connexion.php";
