@@ -1,5 +1,5 @@
 <?php
-    echo $_SESSION['articles'][0]['titre'];
+    //parcours de la table acticle
     for($articleCompteur=0; $articleCompteur < count($_SESSION['articles']); $articleCompteur++){
         //chaque tuple
         $article = $_SESSION['articles'][$articleCompteur];
@@ -12,9 +12,6 @@
         $likes = $article['likes'];
         $dateCreaArticle = $article['dateCreaArticle'];
         $contenuArticle = $article['contenuArticle'];
-
-        echo $nbVues;
-        echo $likes;
-        echo $contenuArticle;
+        
     }
 ?>
