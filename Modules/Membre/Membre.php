@@ -1,4 +1,3 @@
-
 <?php
 require_once './Modules/Membre/cont_membre.php';
 class Membre {
@@ -24,17 +23,20 @@ class Membre {
             case "premiumform":
                 $this->controleur->premiumform();
                 break;
-            case "profil":
-                $this->controleur->profil();
-                break;
             case "devenirpremium":
                 $this->controleur->devenirpremium();
                 break;
             case "annulerAbonnement":
                 $this->controleur->annulerAbonnement();
                 break;
-            case "mesfavoris":
-                $this->controleur->mesfavoris();
+            case "articlefav":
+                $this->controleur->mesarticlesfavoris();
+                break;
+            case "coursfav":
+                $this->controleur->mescoursfavoris();
+                break;
+            case "forumfav":
+                $this->controleur->mesforumsfavoris();
                 break;
             default:
                 echo("accès interdit");

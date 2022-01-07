@@ -5,6 +5,11 @@ require_once "./connexion.php";
     class ModeleMembre extends Connexion{
         public function __construct() {}
 
+        function getId($pseudo) {
+            $req= self::$bdd->prepare("SELECT idUtilisateur FROM Utilisateur WHERE pseudo = ?;");
+            $req->execute([$pseudo]);
+            return $req->fetch();
+        }
         function getForumFav($id) {
             $req = self::$bdd->prepare("SELECT * FROM Forum NATURAL JOIN FORUMFAV WHERE idUtilisateur = ?;");
             $req->execute([$id]);

@@ -33,6 +33,9 @@
                 </a>
                 <?php } else { ?>
 
+                <a href="index.php?module=Authentification&action=profil">
+                    Profil
+                </a>
                 <a href="index.php?module=Authentification&action=deconnexion">
                     Déconnexion
                 </a>

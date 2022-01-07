@@ -5,10 +5,6 @@ class VueMembre extends VueGenerique{
 
     public function __construct(){}
 
-    public function profil(){
-        $this->getAffichage('Membre/profil.php');
-    }
-
     public function devenirpremium(){
         $this->getAffichage('Membre/devenirpremium.php');
     }
@@ -17,7 +13,15 @@ class VueMembre extends VueGenerique{
         $this->getAffichage('Membre/annulerAbonnement.php');
     }
 
-    public function mesfavoris(){
-        $this->getAffichage('Membre/mesfavoris.php');
+    public function coursfav(){
+        $this->getAffichage('Membre/coursfav.php');
+    }
+
+    public function forumfav(){
+        $this->getAffichage('Membre/forumfav.php');
+    }
+
+    public function artfav(){
+        $this->getAffichage('Membre/artfav.php');
     }
 }
