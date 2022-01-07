@@ -4,7 +4,7 @@ require_once "./connexion.php";
 
 class ModeleArticle extends Connexion {
 
-    public function getArticles(){
+    public function getListeArticles(){
         $req = self::$bdd->prepare("SELECT idArticle, titre, nbVues, likes, dateCreaArticle FROM Article");
         $req->execute();
         $listeArticles = $req->fetchAll(PDO::FETCH_ASSOC);
@@ -12,9 +12,10 @@ class ModeleArticle extends Connexion {
     }
 
     public function getArticle($id){
-        $req = self::$bdd->prepare("SELECT titre, contenuArticle, nbVues, likes, dateCreaArticle FROM Article");
+        $req = self::$bdd->prepare("SELECT titre, contenuArticle FROM Article where id = ?");
+        $req->bind_param("i", $id);
         $req->execute();
-        $listeArticles = $req->fetchAll(PDO::FETCH_ASSOC);
-        return $listeArticles;
+        $rticles = $req->fetch(PDO::FETCH_OBJ);
+        return $articles;
     }
 }

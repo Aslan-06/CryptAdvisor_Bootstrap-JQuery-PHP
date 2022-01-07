@@ -12,13 +12,14 @@ class ContArticle{
     }
 
     public function afficherListe(){
-        $listeArticles = $this->modele->getArticles();
+        $listeArticles = $this->modele->getListeArticles();
         $this->vue->afficherListe($listeArticles);
     }
 
     public function afficherArticle(){
         $idArticle = $_GET['idArticle'];
         $article = $this->modele->getArticle($idArticle);
+        $this->vue->afficherArticle($article);
     }
 
     public function creerArticle(){

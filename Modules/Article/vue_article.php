@@ -6,7 +6,12 @@ class VueArticle extends VueGenerique{
     public function __construct(){}
 
     public function afficherListe($articles){
-        $_SESSION['articles'] = $articles;
+        $_SESSION['listeArticles'] = $articles;
+        $this->getAffichage('Article/listeArticles.php');
+    }
+
+    public function afficherArticle($article){
+        $_SESSION['article'] = $article;
         $this->getAffichage('Article/article.php');
     }
 }
