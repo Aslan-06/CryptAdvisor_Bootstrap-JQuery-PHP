@@ -18,7 +18,7 @@ require_once "./connexion.php";
         }
 
         function getArticleFav($id) {
-            $req = self::$bdd->prepare("SELECT * FROM Article NATURAL JOIN ARTICLEFAV WHERE idUtilisateur = ?;");
+            $req = self::$bdd->prepare("SELECT * FROM Article NATURAL JOIN ARTICLEFAV WHERE idUtilisateur = :id;");
             $req->execute([$id]);
             $res = $req->fetchAll();
             return $res;

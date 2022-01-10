@@ -38,17 +38,18 @@ class ContMembre{
     }
 
     public function mesarticlesfavoris(){
-        $this->tab = $this->modele->getArticleFav(getId($_SESSION['pseudo']));
+        $this->tab = $this->modele->getArticleFav($this->modele->getId($_SESSION['pseudo']));
         $this->vue->artfav($this->tab);
     }
 
     public function mesforumsfavoris(){
-        $this->tab = $this->modele->getForumFav(getId($_SESSION['pseudo']));
+        $this->tab = $this->modele->getForumFav($this->modele->getId($_SESSION['pseudo']));
+        
         $this->vue->forumfav($this->tab);
     }
 
     public function mescoursfavoris(){
-        $this->tab = $this->modele->getCoursFav(getId($_SESSION['pseudo']));
+        $this->tab = $this->modele->getCoursFav($this->modele->getId($_SESSION['pseudo']));
         $this->vue->coursfav($this->tab);
     }
 
