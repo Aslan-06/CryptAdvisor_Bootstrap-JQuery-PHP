@@ -24,4 +24,8 @@ class VueMembre extends VueGenerique{
     public function artfav(){
         $this->getAffichage('Membre/artfav.php');
     }
+
+    public function demanderoleforum(){
+        $this->getAffichage('Membre/demanderole.php');
+    }
 }

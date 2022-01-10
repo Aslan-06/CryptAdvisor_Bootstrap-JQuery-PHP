@@ -38,6 +38,10 @@ class Membre {
             case "forumfav":
                 $this->controleur->mesforumsfavoris();
                 break;
+            case "promotion":
+                $this->controleur->demanderole();
+            case "demandeform":
+                $this->controleur->promotionform();
             default:
                 echo("accès interdit");
                 break;

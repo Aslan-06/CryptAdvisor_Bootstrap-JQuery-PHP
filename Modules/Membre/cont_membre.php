@@ -29,6 +29,17 @@ class ContMembre{
          }
     }
 
+    public function promotionform(){
+        if (!isset($_POST['message']) OR !isset($_POST['ans'])){
+            echo"pas remplis";
+        } else {
+            $roledemande = $_POST['ans'];
+            if ($roledemande == 'auteur');
+            if ($roledemande == 'modo');
+            if ($roledemande == 'admin'); // A REMPLIR
+        }
+    }
+
     public function annulerAbonnement(){
         $this->modele->removeUserPremium($_SESSION['pseudo']);
     }
@@ -52,6 +63,12 @@ class ContMembre{
         $this->tab = $this->modele->getCoursFav($this->modele->getId($_SESSION['pseudo']));
         $this->vue->coursfav($this->tab);
     }
+
+    public function demanderole(){
+        $this->vue->demanderoleforum(); 
+    }
+
+    
 
 }
 

@@ -13,8 +13,13 @@ echo"
                     <a href='index.php?module=Membre&action=coursfav'> Cours</a>
                     <a href='index.php?module=Membre&action=forumfav'> Forums</a>
                 </div>
+
+                <div class='card-body'>
+                    <a href='index.php?module=Membre&action=promotion'> Faire une demande de promotion</a>
+                </div>
             </div>
         </div>"
         
+
         ;
 ?>
