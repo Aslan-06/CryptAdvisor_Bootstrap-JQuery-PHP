@@ -30,12 +30,14 @@ class ContMembre{
     }
 
     public function promotionform(){
-        if (!isset($_POST['message']) OR !isset($_POST['ans'])){
-            echo"pas remplis";
+        var_dump($this->modele->getId($_SESSION['pseudo']));
+        if (!isset($_POST['message']) or !isset($_POST['ans'])){
+            echo"Vous devez choisir un role et ajouter un message";
         } else {
             $roledemande = $_POST['ans'];
             if ($roledemande == 'auteur'){
-                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo'])=="2")){
+                
+                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo']))=="2"){
                     echo"vous etes deja auteur";
                 }else{
                     //ajouter la demande dans la bd
@@ -43,7 +45,7 @@ class ContMembre{
                 }
             }
             if ($roledemande == 'modo'){
-                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo'])=="3")){
+                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo']))=="3"){
                     echo"vous etes deja modo";
                 }else{
                     //ajouter la demande dans la bd
@@ -51,7 +53,7 @@ class ContMembre{
                 }
             }
             if ($roledemande == 'admin'){
-                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo'])=="4")){
+                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo']))=="4"){
                     echo"vous etes deja admin";
                 }else{
                     //ajouter la demande dans la bd
