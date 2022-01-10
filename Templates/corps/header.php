@@ -41,6 +41,35 @@
                 </a>
                 <?php } ?>
             </div>
+
+            <div class="form-group">
+                <input class="form-control" type="text" id="search-tag" value="" placeholder="Rechercher"/>
+            </div>
+
+            <script>
+                $(document).ready(function(){
+                    $('#search-tag').keyup(function(){
+                    $('#result-search').html('');
+                
+                    var tag = $(this).val();
+                
+                    if(tag != ""){
+                        $.ajax({
+                        type: 'GET',
+                        url: 'index.php?module=Membre&action=recehrchetag',
+                        data: 'tag=' + encodeURIComponent(tag),
+                        success: function(data){
+                            if(data != ""){
+                            $('#result-search').append(data);
+                            }else{
+                            document.getElementById('result-search').innerHTML = "<div style='font-size: 20px; text-align: center; margin-top: 10px'>Aucun tag</div>"
+                            }
+                        }
+                        });
+                    }
+                    });
+                });
+            </script>
         </div>
     </header>
 
