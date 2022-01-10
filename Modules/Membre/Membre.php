@@ -23,8 +23,8 @@ class Membre {
             case "premiumform":
                 $this->controleur->premiumform();
                 break;
-            case "devenirpremium":
-                $this->controleur->devenirpremium();
+            case "promotionform":
+                $this->controleur->promotionform();
                 break;
             case "annulerAbonnement":
                 $this->controleur->annulerAbonnement();
@@ -40,8 +40,8 @@ class Membre {
                 break;
             case "promotion":
                 $this->controleur->demanderole();
-            case "demandeform":
-                $this->controleur->promotionform();
+            // case "demandeform":
+            //     $this->controleur->promotionform();
             default:
                 echo("accès interdit");
                 break;

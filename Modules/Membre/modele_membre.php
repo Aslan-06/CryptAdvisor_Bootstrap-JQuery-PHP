@@ -10,6 +10,13 @@ require_once "./connexion.php";
             $req->execute([$pseudo]);
             return $req->fetch();
         }
+
+        function getRole($id){
+            $req= self::$bdd->prepare("SELECT idRole FROM Utilisateur WHERE idUtilisateur = ?;");
+            $req->execute([$id]);
+            return $req->fetch();
+        }
+
         function getForumFav($id) {
             $req = self::$bdd->prepare("SELECT * FROM Forum NATURAL JOIN FORUMFAV WHERE idUtilisateur = ?;");
             $req->execute([$id]);

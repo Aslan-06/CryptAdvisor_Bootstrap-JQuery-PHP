@@ -34,9 +34,30 @@ class ContMembre{
             echo"pas remplis";
         } else {
             $roledemande = $_POST['ans'];
-            if ($roledemande == 'auteur');
-            if ($roledemande == 'modo');
-            if ($roledemande == 'admin'); // A REMPLIR
+            if ($roledemande == 'auteur'){
+                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo'])=="2")){
+                    echo"vous etes deja auteur";
+                }else{
+                    //ajouter la demande dans la bd
+                    echo"votre demande a été envoyée à un admin";
+                }
+            }
+            if ($roledemande == 'modo'){
+                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo'])=="3")){
+                    echo"vous etes deja modo";
+                }else{
+                    //ajouter la demande dans la bd
+                    echo"votre demande a été envoyée à un admin";
+                }
+            }
+            if ($roledemande == 'admin'){
+                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo'])=="4")){
+                    echo"vous etes deja admin";
+                }else{
+                    //ajouter la demande dans la bd
+                    echo"votre demande a été envoyée à un admin";
+                }
+            } 
         }
     }
 
