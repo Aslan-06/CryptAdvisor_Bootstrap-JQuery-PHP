@@ -33,9 +33,9 @@ class ContConnexion{
             } else {
                 $verifPassword = password_verify($password,$user->password);
                 if($verifPassword){
-                    if(session_status()== PHP_SESSION_DISABLED) session_start();
+                    if(session_status()== PHP_SESSION_DISABLED) 
+                        session_start();
                     $_SESSION['pseudo'] = $pseudo;
-                    // $_SESSION['id']=$id;
                     $this->profile();
                 } else{
                     echo"Mot de passe incorrect";
