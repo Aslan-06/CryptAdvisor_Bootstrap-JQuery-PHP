@@ -1,13 +1,14 @@
 <?php
     
-        $article = $_SESSION['listeArticles'][$articleCompteur];
+        $article = $_SESSION['article'];
         
         //tous les attributs de tuple courrant
-        $idArticle = $article['idArticle'];
         $titreArticle = $article['titre'];
-        $nbVues = $article['nbVues'];
-        $likes = $article['likes'];
-        $dateCreaArticle = $article['dateCreaArticle'];
+        $contenuArticle = $article['contenuArticle'];
 
-    }
+        echo '<div class="container" id="articleConcret">';
+			echo '<h2 class="Display-6 justify-content-center">'.$titreArticle.'</h2>';
+            echo '<p class="lead">'.$contenuArticle.'</p>';
+		echo '</div>';
+
 ?>

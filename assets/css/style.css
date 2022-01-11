@@ -5,6 +5,9 @@ body{
     width: 99%;
     background: #0b0e11;
 }
+a{
+    text-decoration: none;
+}
 
 #header {
     height:179px;
@@ -30,7 +33,7 @@ body{
     margin-top: 42px;
     margin-right: 66px;
 }
-nav {
+#navigateur {
     width:auto;
     height: auto;
     color:white;
@@ -78,4 +81,58 @@ nav a{
     text-align: center;
     border-radius: 12px;
     display:block;
+}
+
+.articles{
+    padding:10px;
+    text-decoration: none;
+    margin-top:30px;
+    border:2px lightslategray solid;
+    border-radius: 20px;
+    background-color: #181a20;
+    color: white;
+}
+.articles h1{
+    font-weight: 600;
+    margin-left:30px;
+    color: #cd853f;
+}
+.articlesParagraph{
+    margin-left:15px;
+    font-style:italic;
+}
+.div_icons{
+    display: inline;
+    margin-left: 78%;
+}
+.icon{
+    width: 15px;
+    height:15px;
+    display:inline;
+    margin-right: 5px;
+}
+.text_of_icon{
+    display:inline;
+    margin-right:20px;
+}
+
+.pagination{
+    margin-top:50px;
+    margin-bottom:100px;
+}
+
+#articleConcret{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding:40px;
+    background-color: #181a20;
+    border:2px lightslategray solid;
+    border-radius: 20px;
+}
+.Display-6{
+    color: #cd853f;
+}
+.lead{
+    margin:40px;
+    color:wheat;
 }

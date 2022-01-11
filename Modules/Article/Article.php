@@ -14,14 +14,18 @@ class Article {
         if(!isset($_GET['action'])){
             $_GET['action'] = "liste";
         }
-        return $_GET["action"];
+        return $_GET['action'];
     }
 
     public function render($toDO){
         switch ($toDO){
 
             case "liste":
-                $this->controleur->afficherListe();
+                $page = 1;
+                if(isset($_GET['page'])){
+                    $page = $_GET['page'];
+                }
+                $this->controleur->afficherListe($page);
                 break;
             case "article":
                 $this->controleur->afficherArticle();

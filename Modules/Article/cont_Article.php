@@ -11,8 +11,8 @@ class ContArticle{
         $this->vue = new VueArticle();
     }
 
-    public function afficherListe(){
-        $listeArticles = $this->modele->getListeArticles();
+    public function afficherListe($page){
+        $listeArticles = $this->modele->getListeArticles($page);
         $this->vue->afficherListe($listeArticles);
     }
 
