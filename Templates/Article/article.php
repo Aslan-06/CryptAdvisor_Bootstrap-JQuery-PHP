@@ -8,7 +8,7 @@
 
         echo '<div class="container" id="articleConcret">';
 			echo '<h2 class="Display-6 justify-content-center">'.$titreArticle.'</h2>';
-            echo '<p class="lead">'.$contenuArticle.'</p>';
+            echo '<p class="lead paragrapheArticle">'.$contenuArticle.'</p>';
 		echo '</div>';
 
 ?>
