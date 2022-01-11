@@ -26,12 +26,11 @@ class ContConnexion{
             $pseudo =htmlspecialchars( $_POST['pseudo']);
             $password = htmlspecialchars($_POST['password']);
             $user = $this->modele->getUser($email, $pseudo);
-            
 
             if(empty($user)){
                 echo"Ce mail n'existe pas!";
             } else {
-                $verifPassword = password_verify($password,$user->password);
+                $verifPassword = password_verify($password,$user->mdp);
                 if($verifPassword){
                     if(session_status()== PHP_SESSION_DISABLED) session_start();
                     $_SESSION['pseudo'] = $pseudo;

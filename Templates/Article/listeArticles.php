@@ -1,6 +1,15 @@
 <?php
-    //parcours de la table acticles
+    
     $nbArticles = count($_SESSION['listeArticles']) - 1;
+    if(isset($_SESSION['listeArticles']['role'])){
+        $nbArticles = $nbArticles - 1;
+        $role = $_SESSION['listeArticles']['role'];
+        if($role >= 2){ // auteur ou plus
+            echo 'helloooo wooollrd!! Yeeeees';
+        }
+    }
+    
+    //parcours de la table acticles
     for($articleCompteur=0; $articleCompteur < $nbArticles; $articleCompteur++){ // -1 pour ne pas compter le nb de page
         //chaque tuple
         $article = $_SESSION['listeArticles'][$articleCompteur];
@@ -42,10 +51,8 @@
     echo       '<ul class="pagination pagination-sm justify-content-center">';
     $page = end($_SESSION['listeArticles']);
     $pagePrecedente = $page - 1;
-    if($pagePrecedente < 1)
-        $pagePrecedente = 1;
     $etatPrecedent;
-    if($pagePrecedente == 1)
+    if($pagePrecedente < 1)
         $etatPrecedent = 'disabled';
     else
         $etatPrecedent = 'active';
@@ -54,14 +61,13 @@
     echo            '<li class="page-item"><a class="page-link" href="index.php?module=Article&page='.$compteur.'">'.$compteur.'</a></li>';
     }
     $pageSuivante = $page + 1;
-    if($pageSuivante > $nbPages)
-        $pageSuivante = $nbPages;
     $etatSuivant;
-    if($pageSuivante == $nbPages)
+    if($pageSuivante > $nbPages)
         $etatSuivant = 'disabled';
     else
         $etatSuivant = 'active';
     echo            '<li class="page-item '.$etatSuivant.'"><a class="page-link" href="index.php?module=Article&page='.$pageSuivante.'">Suivant</a></li>';
     echo       '</ul>';
     echo '</nav>';
+    
 ?>
