@@ -6,6 +6,11 @@
     <meta charset="UTF-8">
     <title>Crypt Advisor</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+            #tag-container{display: inline-block;position: relative;vertical-align: middle;width: 360px;}
+            #tag-container input{width:100%}
+            #tag-container ul{left:0 !important;right:0 !important;max-height:320px;overflow-y:auto;overflow-x:hidden;}
+            </style>
 </head>
 
 <body>
@@ -41,35 +46,17 @@
                 </a>
                 <?php } ?>
             </div>
+        <div>
 
-            <div class="form-group">
-                <input class="form-control" type="text" id="search-tag" value="" placeholder="Rechercher"/>
+            <label for="tag">Faire une recherche par tag :</label>
+                <span id="tag-container">
+                    <input id="tag" name="tag" type="text" placeholder="Entrer un tag" />
+                </span>
+                <div id="search-results">
+                    
+                </div>
             </div>
-
-            <script>
-                $(document).ready(function(){
-                    $('#search-tag').keyup(function(){
-                    $('#result-search').html('');
-                
-                    var tag = $(this).val();
-                
-                    if(tag != ""){
-                        $.ajax({
-                        type: 'GET',
-                        url: 'index.php?module=Membre&action=recehrchetag',
-                        data: 'tag=' + encodeURIComponent(tag),
-                        success: function(data){
-                            if(data != ""){
-                            $('#result-search').append(data);
-                            }else{
-                            document.getElementById('result-search').innerHTML = "<div style='font-size: 20px; text-align: center; margin-top: 10px'>Aucun tag</div>"
-                            }
-                        }
-                        });
-                    }
-                    });
-                });
-            </script>
         </div>
-    </header>
 
+
+    </header>
