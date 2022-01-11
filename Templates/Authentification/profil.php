@@ -1,5 +1,3 @@
-<?php
-echo"
         <div class='container mt-5 d-flex align-items-center justify-content-center'>
             <div class='card' style='width: 18rem;'>
                 <div class='card-body'>
@@ -18,8 +16,4 @@ echo"
                     <a href='index.php?module=Membre&action=promotion'> Faire une demande de promotion</a>
                 </div>
             </div>
-        </div>"
-        
-
-        ;
-?>
+        </div>

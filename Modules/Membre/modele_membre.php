@@ -12,8 +12,10 @@ require_once "./connexion.php";
         }
 
         function getRole($id){
-            $req= self::$bdd->prepare("SELECT idRole FROM Utilisateur WHERE idUtilisateur = ?;");
-            $req->execute([$id]);
+            $id = $id->idUtilisateur;
+            $req= self::$bdd->prepare("SELECT idRole FROM Utilisateur WHERE idUtilisateur = :id;");
+            $req->bindParam(':id',$id);
+            $req->execute();
             return $req->fetch();
         }
 
