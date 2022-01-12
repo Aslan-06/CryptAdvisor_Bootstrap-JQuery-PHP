@@ -1,6 +1,6 @@
 <?php
 require_once "./Modules/Article/vue_article.php";
-require_once "./Modules/Article/modele_article.php";
+require_once "./Modules/Article/modele_Article.php";
 
 class ContArticle{
     private $modele;
