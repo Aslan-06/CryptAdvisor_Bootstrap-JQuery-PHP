@@ -23,9 +23,6 @@ class Membre {
             case "premiumform":
                 $this->controleur->premiumform();
                 break;
-            case "promotionform":
-                $this->controleur->promotionform();
-                break;
             case "annulerAbonnement":
                 $this->controleur->annulerAbonnement();
                 break;
@@ -38,10 +35,14 @@ class Membre {
             case "forumfav":
                 $this->controleur->mesforumsfavoris();
                 break;
+            case "devenirpremium":
+                $this->controleur->devenirpremium();
+                break;
             case "promotion":
                 $this->controleur->demanderole();
-            // case "demandeform":
-            //     $this->controleur->promotionform();
+            case "promotionform":
+                $this->controleur->promotionform();
+                break;
             default:
                 echo("accès interdit");
                 break;

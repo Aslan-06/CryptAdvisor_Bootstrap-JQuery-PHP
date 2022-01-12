@@ -6,6 +6,27 @@ class Accueil {
 
     public function __construct(){
         $this->controleur = new ContAccueil();
+        $this->action = $this->setAction();
+        $this->render($this->action);
+    }
+
+    public function setAction(){
+        if(!isset($_GET['action'])){
+            $_GET['action'] = "inscription";
+        }
+        return $_GET["action"];
+    }
+
+    public function render($toDO){
+        switch ($toDO){
+
+            case "search":
+                $this->controleur->search();
+                break;
+            default:
+                echo"accès interdit";
+                break;
+        }
     }
     
 }
