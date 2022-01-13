@@ -24,7 +24,7 @@ class Accueil {
                 $this->controleur->search();
                 break;
             default:
-                echo"accès interdit";
+                $this->controleur->accueil();
                 break;
         }
     }

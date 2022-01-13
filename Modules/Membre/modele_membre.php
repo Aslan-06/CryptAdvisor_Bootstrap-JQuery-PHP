@@ -77,6 +77,20 @@ require_once "./connexion.php";
             $res = $req->fetchAll();
             return $res;
         }
+
+        function accepterPromo($pseudo, $roledemande){
+            $req = self::$bdd->prepare("UPDATE Utilisateur SET idRole = :roledemande WHERE idUtilisateur = :pseudo");
+            $req->bindParam(':pseudo', $pseudo);
+            $req->bindParam(':roledemande', $roledemande);
+            $req->execute();
+            $this->supprimerPromo($pseudo);
+        }
+
+        function supprimerPromo($pseudo){
+            $req = self::$bdd->prepare("DELETE * FROM DemandePromo where pseudoUtilisateur = :pseudo;");
+            $req->bindParam(':pseudo', $pseudo);
+            $req->execute();
+        }
     }
 
 ?>

@@ -13,7 +13,7 @@
         $module = "Accueil";
     }
 
-    if (!in_array($module, ["Accueil", "Authentification", "Membre", "Article", "Cours"])) {
+    if (!in_array($module, ["Forum", "Accueil", "Authentification", "Membre", "Article", "Cours"])) {
         die("Unauthorized");
     }
 

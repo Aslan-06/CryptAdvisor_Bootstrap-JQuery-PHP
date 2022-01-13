@@ -6,12 +6,14 @@
     <meta charset="UTF-8">
     <title>Crypt Advisor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link data-require="bootstrap@3.3.5" data-semver="3.3.5" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link data-require="fontawesome@4.3.0" data-semver="4.3.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />   
     <link rel="stylesheet" href="assets/css/style.css" />
     <style>
-            #tag-container{display: inline-block;position: relative;vertical-align: middle;width: 360px;}
-            #tag-container input{width:100%}
-            #tag-container ul{left:0 !important;right:0 !important;max-height:320px;overflow-y:auto;overflow-x:hidden;}
-            </style>
+        #tag-container{display: inline-block;position: relative;vertical-align: middle;width: 360px;}
+        #tag-container input{width:100%}
+        #tag-container ul{left:0 !important;right:0 !important;max-height:320px;overflow-y:auto;overflow-x:hidden;}
+    </style>
 </head>
 
 <body>

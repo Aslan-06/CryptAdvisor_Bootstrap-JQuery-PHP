@@ -2,6 +2,7 @@
 require_once "./Modules/Membre/vue_membre.php";
 require_once "./Modules/Membre/modele_membre.php";
 require_once "./Modules/Authentification/vue_connexion.php";
+require_once "./Modules/Accueil/vue_accueil.php";
 
 class ContMembre{
     private $modele;
@@ -11,6 +12,7 @@ class ContMembre{
         $this->modele = new ModeleMembre();
         $this->vue = new VueMembre();
         $this->vueconn = new VueConnexion();
+        $this->vueacc = new VueAccueil();
     }
 
     public function premiumform(){
@@ -19,8 +21,7 @@ class ContMembre{
         }
         else if ((!empty($_SESSION['pseudo']) && ($this->modele->getPremiumUser($_SESSION['pseudo'])->comptePremium=="1"))){
             $this->vue->annulerAbonnement();
-        }
-        else if(!empty($_SESSION['pseudo'])){
+        }else {
             $this->vueconn->connexion();
         }
     }
@@ -30,7 +31,7 @@ class ContMembre{
              echo"Tous les champs doivent être remplis!";
          } else {
             $this->modele->addUserPremium($_SESSION['pseudo']);
-            echo"vs êtes maintenant premium";
+            $this->vueacc->accueil();
          }
     }
 
@@ -68,6 +69,7 @@ class ContMembre{
 
     public function annulerAbonnement(){
         $this->modele->removeUserPremium($_SESSION['pseudo']);
+        $this->vue->devenirpremium();
     }
 
     public function annulerAbonnementform(){
@@ -94,7 +96,14 @@ class ContMembre{
         $this->vue->demanderoleforum(); 
     }
 
-    
+    public function refuserPromo($pseudo){
+        $this->modele->supprimerPromo($pseudo);
+    }
+
+    public function accepterPromo($pseudo, $roledemande){
+        $this->modele->accepterPromo($pseudo, $roledemande);
+        $this->vue->voirdemandes();
+    }
 
 }
 

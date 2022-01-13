@@ -46,6 +46,12 @@ class Membre {
             case "voirdemandes":
                 $this->controleur->voirdemandes();
                 break;
+            case "accepterPromo":
+                $this->controleur->accepterPromo(($_GET["pseudo"]), ($_GET["roledemande"]));
+                break;
+            case "refuserPromo":
+                $this->controleur->refuserPromo($_GET["pseudo"]);
+                break;
             default:
                 echo("accès interdit");
                 break;
