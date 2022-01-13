@@ -70,7 +70,12 @@ require_once "./connexion.php";
             $req->bindParam(':pseudo', $pseudo);
             $req->execute();
             return $req->fetch();
+        }
 
+        function getAllrequests(){
+            $req = self::$bdd->prepare("SELECT * FROM DemandePromo;");
+            $res = $req->fetchAll();
+            return $res;
         }
     }
 

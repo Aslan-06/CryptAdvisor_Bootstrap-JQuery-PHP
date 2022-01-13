@@ -43,6 +43,9 @@ class Membre {
             case "promotionform":
                 $this->controleur->promotionform();
                 break;
+            case "voirdemandes":
+                $this->controleur->voirdemandes();
+                break;
             default:
                 echo("accès interdit");
                 break;

@@ -28,4 +28,9 @@ class VueMembre extends VueGenerique{
     public function demanderoleforum(){
         $this->getAffichage('Membre/demanderole.php');
     }
+
+    public function afficherDemandes($demandes){
+        $_SESSION['listeDemandes'] = $demandes;
+        $this->getAffichage('Membre/listeDemandes.php');
+    }
 }

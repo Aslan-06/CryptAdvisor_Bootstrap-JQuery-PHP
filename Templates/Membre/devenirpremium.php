@@ -1,5 +1,4 @@
-<?php
-echo"
+
 <form action='index.php?module=Membre&action=devenirpremium' method='post'>
     <div class='row justify-content-around align-items-center'>
 
@@ -30,5 +29,4 @@ echo"
             </div>
         </div>
     </div>
-</form>";
-?>
+</form>

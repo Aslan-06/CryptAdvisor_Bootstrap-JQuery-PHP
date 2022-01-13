@@ -61,6 +61,11 @@ class ContMembre{
         }
     }
 
+    public function voirdemandes(){
+        $listDemandes = $this->modele->getAllrequests();
+        $this->vue->afficherDemandes($listDemandes);
+    }
+
     public function annulerAbonnement(){
         $this->modele->removeUserPremium($_SESSION['pseudo']);
     }
