@@ -16,7 +16,7 @@ require_once "./connexion.php";
             $req= self::$bdd->prepare("SELECT idRole FROM Utilisateur WHERE idUtilisateur = :id;");
             $req->bindParam(':id',$id);
             $req->execute();
-            return $req->fetch();
+            return $req->fetch(PDO::FETCH_ASSOC)['idRole'];
         }
 
         function getForumFav($id) {
@@ -48,13 +48,29 @@ require_once "./connexion.php";
         function getPremiumUser($pseudo){
             $req = self::$bdd->prepare("SELECT comptePremium FROM Utilisateur where pseudo = ?;");
             $req->execute([$pseudo]);
-            $res = $req->fetch();var_dump($res);
+            $res = $req->fetch();
             return $res;
         }
 
         function removeUserPremium($pseudo){
             $req = self::$bdd->prepare("UPDATE Utilisateur SET comptePremium = 0 where pseudo = ?;");
             $req->execute([$pseudo]);
+        }
+
+        function addPromoRequest($pseudo, $roledemande, $message){
+            $req = self::$bdd->prepare("INSERT INTO DemandePromo (pseudoUtilisateur, roleDemande, messagePromo) VALUES (:pseudo, :roledemande, :msg); ");
+            $req->bindParam(':pseudo', $pseudo);
+            $req->bindParam(':roledemande', $roledemande);
+            $req->bindParam(':msg', $message);
+            $req->execute();
+        }
+
+        function getUserRequest($pseudo){
+            $req = self::$bdd->prepare("SELECT * FROM DemandePromo where pseudoUtilisateur = :pseudo;");
+            $req->bindParam(':pseudo', $pseudo);
+            $req->execute();
+            return $req->fetch();
+
         }
     }
 

@@ -39,32 +39,24 @@ class ContMembre{
             if (isset($_POST["envoyer"]) and !empty($_POST['envoyer']) and ((!isset($_POST['message']) and empty($_POST['message'])) and (!isset($_POST['ans']) and empty($_POST['ans'])))){
                 echo"Vous devez choisir un role et ajouter un message";
             } else {
-                $roledemande = $_POST['ans'];
-                if ($roledemande == 'auteur'){
-                    
-                    if($this->modele->getRole($this->modele->getId($_SESSION['pseudo']))=="2"){
-                        echo"vous etes deja auteur";
-                    }else{
-                        //ajouter la demande dans la bd
+                $message = $_POST['message'];
+                $nomduroledemande = $_POST['ans'];
+                if($this->modele->getUserRequest($_SESSION['pseudo'])!=NULL){
+                    echo"vous avez deja fait une demande";
+                }else{
+                    $roles = [
+                        "admin"=>4,
+                        "modo"=>3,
+                        "auteur"=>2
+                    ];
+                    if($roles[$nomduroledemande] == $this->modele->getRole($this->modele->getId($_SESSION['pseudo']))){
+                        echo"vous etes deja " . $nomduroledemande;                        
+                    } else{
+                        $this->modele->addPromoRequest($_SESSION['pseudo'], $roles[$nomduroledemande], $message);
                         echo"votre demande a été envoyée à un admin";
-                    }
+                    }  
+
                 }
-                if ($roledemande == 'modo'){
-                    if($this->modele->getRole($this->modele->getId($_SESSION['pseudo']))=="3"){
-                        echo"vous etes deja modo";
-                    }else{
-                        //ajouter la demande dans la bd
-                        echo"votre demande a été envoyée à un admin";
-                    }
-                }
-                if ($roledemande == 'admin'){
-                    if($this->modele->getRole($this->modele->getId($_SESSION['pseudo']))=="4"){
-                        echo"vous etes deja admin";
-                    }else{
-                        //ajouter la demande dans la bd
-                        echo"votre demande a été envoyée à un admin";
-                    }
-                } 
             }
         }
     }
