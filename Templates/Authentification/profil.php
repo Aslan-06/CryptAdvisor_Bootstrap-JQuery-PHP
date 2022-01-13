@@ -1,7 +1,9 @@
         <div class='container mt-5 d-flex align-items-center justify-content-center'>
             <div class='card' style='width: 18rem;'>
                 <div class='card-body'>
-                    <h5 class='card-title'>Profil de $_SESSION[pseudo]</h5> 
+                    <h5 class='card-title'>Profil de 
+                        <?php echo($_SESSION['pseudo'])?>
+                    </h5> 
                     <p class='card-text'>Voici mon profil</p>
                 </div>
 

@@ -1,6 +1,7 @@
 <?php
 require_once "./Modules/Membre/vue_membre.php";
 require_once "./Modules/Membre/modele_membre.php";
+require_once "./Modules/Authentification/vue_connexion.php";
 
 class ContMembre{
     private $modele;
@@ -9,6 +10,7 @@ class ContMembre{
     public function __construct(){
         $this->modele = new ModeleMembre();
         $this->vue = new VueMembre();
+        $this->vueconn = new VueConnexion();
     }
 
     public function premiumform(){
@@ -17,6 +19,9 @@ class ContMembre{
         }
         else if ((!empty($_SESSION['pseudo']) && ($this->modele->getPremiumUser($_SESSION['pseudo'])->comptePremium=="1"))){
             $this->vue->annulerAbonnement();
+        }
+        else if(!empty($_SESSION['pseudo'])){
+            $this->vueconn->connexion();
         }
     }
 

@@ -19,13 +19,12 @@ class ContConnexion{
     }
 
     public function connexionform(){
-        if ( !isset($_POST['email']) or !isset($_POST['password']) or  empty($_POST['email']) or empty($_POST['password'])) {
+        if ( !isset($_POST['pseudo']) or !isset($_POST['password']) or  empty($_POST['pseudo']) or empty($_POST['password'])) {
             echo"Tous les champs doivent être remplis!";
         } else {
-            $email = htmlspecialchars($_POST['email']);
             $pseudo =htmlspecialchars( $_POST['pseudo']);
             $password = htmlspecialchars($_POST['password']);
-            $user = $this->modele->getUser($email, $pseudo);
+            $user = $this->modele->getUser($pseudo);
             
 
             if(empty($user)){
@@ -35,7 +34,6 @@ class ContConnexion{
                 if($verifPassword){
                     if(session_status()== PHP_SESSION_DISABLED) session_start();
                     $_SESSION['pseudo'] = $pseudo;
-                    // $_SESSION['id']=$id;
                     $this->profile();
                 } else{
                     echo"Mot de passe incorrect";
@@ -73,8 +71,8 @@ class ContConnexion{
 
     public function deconnexion(){
         if(!empty($_SESSION['pseudo'])){
-            echo("vs ete deko");
             unset($_SESSION['pseudo']);
+            $this->vue->connexion();
         }
         include_once "connexion.php";
     }
