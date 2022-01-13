@@ -8,31 +8,40 @@
         $pseudo = $article['pseudoUtilisateur'];
         $roleDemande = $article['roleDemande'];
         $message = substr($article['messagePromo'],0,100).'...';
-        
+?>        
 
-        echo '<div class="container">';
-        echo    '<div class="d-grid gap-10">';
-        echo        '<div class="p-2">';
-        echo            '<div class="container articles">';
-        echo                '<div class="jumbotron">'; 
-        echo                    '<h1 class="display-6">'.$pseudo.'</h1>';
-        echo                    '<p class="lead articlesParagraph">'.$roleDemande.'</p>';
-        echo                    '<p class="lead articlesParagraph">'.$message.'</p>';
-        echo                    '<div class="div_icons">';
-        echo                        '<button type="button" class="btn btn-primary btn-lg">Large button</button>';
-        echo                        '<button type="button" class="btn btn-secondary btn-lg">Large button</button>';
-        echo                    '</div>';
-        echo                "</div>";
-        echo            "</div>";
-        echo        '</div>';
-        echo    '</div>';
-        echo '</div>';
-    }
+<div class="container">
+    <div class="d-grid gap-10">
+        <div class="p-2">
+            <div class="container articles">
+                <div class="jumbotron">
+                    <h1 class="display-6"><?php echo"$pseudo"?></h1>
+                    <p class="lead articlesParagraph"><?php echo"$roleDemande"?></p>
+                    <p class="lead articlesParagraph"><?php echo"$message"?></p>
+                    <div class="form-check form-check-inline">
+                        <a href="#">
+                            <button type="button" class="btn btn-success ng-class:{ 'disabled':  mc.ButtonsDisabled(m, v), 'chosen' : mc.IsApproved(v.VoteTypeId) }" ng-click="mv.VoteApprove(v)">
+                            <span class="fa fa-check" aria-hidden="true"></span>
+                            <span class="hidden-xs" aria-label="For"> Approve</span>
+                            </button>
+                        </a>
+                        <a href="#">
+                            <button type="button" class="btn btn-danger ng-class:{ 'disabled':  mc.ButtonsDisabled(m, v), 'chosen' : mc.IsRejected(v.VoteTypeId) }" ng-click="mv.VoteReject(v)">
+                                <span class="fa fa-times" aria-hidden="true"></span>
+                                <span class="hidden-xs" aria-label="Against"> Reject</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     $nbPages = $nbArticles / 10 + 1;
 
-    echo '<nav>';
-    echo       '<ul class="pagination pagination-sm justify-content-center">';
+<nav>
+       '<ul class="pagination pagination-sm justify-content-center">';
     $page = end($_SESSION['listeDemandes']);
     $pagePrecedente = $page - 1;
     if($pagePrecedente < 1)
@@ -42,9 +51,9 @@
         $etatPrecedent = 'disabled';
     else
         $etatPrecedent = 'active';
-    echo            '<li class="page-item '.$etatPrecedent.'"><a class="page-link" href="index.php?module=Article&page='.$pagePrecedente.'">Précédent</a></li>';
+            '<li class="page-item '.$etatPrecedent.'"><a class="page-link" href="index.php?module=Article&page='.$pagePrecedente.'">Précédent</a></li>';
     for($compteur = 1; $compteur <= $nbPages; $compteur++){
-    echo            '<li class="page-item"><a class="page-link" href="index.php?module=Article&page='.$compteur.'">'.$compteur.'</a></li>';
+            '<li class="page-item"><a class="page-link" href="index.php?module=Article&page='.$compteur.'">'.$compteur.'</a></li>';
     }
     $pageSuivante = $page + 1;
     if($pageSuivante > $nbPages)
@@ -54,7 +63,6 @@
         $etatSuivant = 'disabled';
     else
         $etatSuivant = 'active';
-    echo            '<li class="page-item '.$etatSuivant.'"><a class="page-link" href="index.php?module=Article&page='.$pageSuivante.'">Suivant</a></li>';
-    echo       '</ul>';
-    echo '</nav>';
-?>
+            '<li class="page-item '.$etatSuivant.'"><a class="page-link" href="index.php?module=Article&page='.$pageSuivante.'">Suivant</a></li>';
+       '</ul>';
+</nav>
