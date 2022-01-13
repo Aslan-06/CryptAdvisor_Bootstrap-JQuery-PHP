@@ -1,3 +1,10 @@
+<div >
+    <?php if(isset($_SESSION['erreur']) && !empty($_SESSION['erreur']) ) {
+
+        echo $_SESSION['erreur'];
+        unset($_SESSION['erreur']);
+    }?>
+</div>
 
  <section>
  <form action='index.php?module=Membre&action=promotionform' method='post'>

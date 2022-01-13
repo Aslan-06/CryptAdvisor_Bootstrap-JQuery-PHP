@@ -27,8 +27,14 @@ class ContMembre{
     }
 
     public function devenirpremium(){
-        if (!isset($_POST['Nomcarte']) or !isset($_POST['cardnumber']) or !isset($_POST['expirydate']) or !isset($_POST['cardnumber'])) {
-             echo"Tous les champs doivent être remplis!";
+        if (empty($_POST['Nomcarte']) or empty($_POST['cardnumber']) or empty($_POST['expirydate']) or empty($_POST['cardnumber'])) {
+             $_SESSION["erreur"] = "Tous les champs doivent être remplis !";
+                if(!headers_sent() and isset($_SERVEUR['HTTP_REFERER']) and !empty($_SERVEUR['HTTP_REFERER'])){
+                    header("Location: ".$_SERVEUR['HTTP_REFERER']);
+                    exit();
+                }else{
+                    header("Location: index.php?module=Membre&action=premiumform");
+                }
          } else {
             $this->modele->addUserPremium($_SESSION['pseudo']);
             $this->vueacc->accueil();
@@ -37,13 +43,25 @@ class ContMembre{
 
     public function promotionform(){
         if(isset($_POST['envoyer'])){
-            if (isset($_POST["envoyer"]) and !empty($_POST['envoyer']) and ((!isset($_POST['message']) and empty($_POST['message'])) and (!isset($_POST['ans']) and empty($_POST['ans'])))){
-                echo"Vous devez choisir un role et ajouter un message";
+            if (empty($_POST['envoyer']) or empty($_POST['message']) or empty($_POST['ans'])){
+                $_SESSION["erreur"] = "Vous devez choisir un role et ajouter un message !";
+                if(!headers_sent() and isset($_SERVEUR['HTTP_REFERER']) and !empty($_SERVEUR['HTTP_REFERER'])){
+                    header("Location: ".$_SERVEUR['HTTP_REFERER']);
+                    exit();
+                }else{
+                    header("Location: index.php?module=Membre&action=promotion");
+                }
             } else {
                 $message = $_POST['message'];
                 $nomduroledemande = $_POST['ans'];
                 if($this->modele->getUserRequest($_SESSION['pseudo'])!=NULL){
-                    echo"vous avez deja fait une demande";
+                    $_SESSION["erreur"] = "vous avez deja fait une demande";
+                    if(!headers_sent() and isset($_SERVEUR['HTTP_REFERER']) and !empty($_SERVEUR['HTTP_REFERER'])){
+                        header("Location: ".$_SERVEUR['HTTP_REFERER']);
+                        exit();
+                    }else{
+                        header("Location: index.php?module=Membre&action=promotion");
+                    }
                 }else{
                     $roles = [
                         "admin"=>4,
