@@ -35,6 +35,7 @@ class ContConnexion{
                     if(session_status()== PHP_SESSION_DISABLED) session_start();
                     $_SESSION['pseudo'] = $pseudo;
                     // $_SESSION['id']=$id;
+                    $_SESSION['role'] = $this->modele->getRole($pseudo);
                     $this->profile();
                 } else{
                     echo"Mot de passe incorrect";
@@ -74,6 +75,7 @@ class ContConnexion{
         if(!empty($_SESSION['pseudo'])){
             echo("vs ete deko");
             unset($_SESSION['pseudo']);
+            unset($_SESSION['role']);
         }
         include_once "connexion.php";
     }

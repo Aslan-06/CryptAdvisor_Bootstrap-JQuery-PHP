@@ -84,6 +84,49 @@ nav a{
     display:block;
 }
 
+#message{
+    display: inline;
+
+}
+
+#creerArticleH2{
+    display: inline;
+    color:#cd853f;
+    font-weight: bold;
+}
+#divFormCreationArticle{   
+    margin-top:40px;
+}
+#creerArticleH2{
+    justify-content: center;
+}
+#formCreationArticle{
+    margin-bottom: 50px;
+    padding: 15px;
+    padding-bottom: 0px;
+    background-color: #222222;
+    border: 8px lightslategray double;
+    border-radius: 15px;
+}
+.creationFormLabels{
+    display:block;
+    color:#cd853f;
+    font-weight: bold;
+    font-size: 18px;
+}
+#titreArticleCreation{
+    margin-left: 15px;
+    width: 50%;
+}
+
+#buttonCreerArticle{
+    display: block;
+    width:100px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-bottom: 15px;
+}
+
 .articles{
     padding:10px;
     text-decoration: none;
@@ -129,6 +172,15 @@ nav a{
     background-color: #181a20;
     border:2px lightslategray solid;
     border-radius: 20px;
+}
+#buttonLike{
+    background-color: navajowhite;
+}
+#buttonLike p{
+    display: inline;
+    margin-left: 10px;
+    color:rgb(62,62,62);
+    font-weight: bold;
 }
 .Display-6{
     color: #cd853f;

@@ -21,8 +21,4 @@ class ContArticle{
         $article = $this->modele->getArticle($idArticle);
         $this->vue->afficherArticle($article);
     }
-
-    public function creerArticle(){
-
-    }
 }

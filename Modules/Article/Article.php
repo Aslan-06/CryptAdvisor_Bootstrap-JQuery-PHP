@@ -19,7 +19,6 @@ class Article {
 
     public function render($toDO){
         switch ($toDO){
-
             case "liste":
                 $page = 1;
                 if(isset($_GET['page'])){
@@ -29,9 +28,6 @@ class Article {
                 break;
             case "article":
                 $this->controleur->afficherArticle();
-                break;
-            case "creation":
-                $this->controleur->creerArticle();
                 break;
             default:
                 echo"accès interdit";

@@ -19,6 +19,12 @@ class ModeleConnexion extends Connexion {
         $req->bindParam(':email',$data['email']);
         $req->bindParam(':password',$data['password']);
         $req->execute();
+    }
 
+    public function getRole($pseudo){
+        $req = self::$bdd->prepare("SELECT idRole FROM Utilisateur WHERE pseudo = :pseudo;");
+        $req->bindParam("pseudo", $pseudo);
+        $req->execute();
+        return $req->fetch(PDO::FETCH_ASSOC)['idRole'];
     }
 }

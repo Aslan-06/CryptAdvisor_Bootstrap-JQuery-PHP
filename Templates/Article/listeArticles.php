@@ -1,16 +1,12 @@
 <?php
     
-    $nbArticles = count($_SESSION['listeArticles']) - 1;
-    if(isset($_SESSION['listeArticles']['role'])){
-        $nbArticles = $nbArticles - 1;
-        $role = $_SESSION['listeArticles']['role'];
-        if($role >= 2){ // auteur ou plus
-            echo 'helloooo wooollrd!! Yeeeees';
-        }
-    }
+    $nbArticlesAAfficher = count($_SESSION['listeArticles']) - 2; // y'a é attributs qui ne sont pas les articles a afficher
+
+    if(isset($_SESSION['role']) && $_SESSION['role'] >= 2)
+        require_once('Templates/Article/creation.php');
     
     //parcours de la table acticles
-    for($articleCompteur=0; $articleCompteur < $nbArticles; $articleCompteur++){ // -1 pour ne pas compter le nb de page
+    for($articleCompteur=0; $articleCompteur < $nbArticlesAAfficher; $articleCompteur++){ // -1 pour ne pas compter le nb de page
         //chaque tuple
         $article = $_SESSION['listeArticles'][$articleCompteur];
         //tous les attributs de tuple courrant
@@ -21,31 +17,31 @@
         $likes = $article['likes'];
         $dateCreaArticle = $article['dateCreaArticle'];
 
-        echo '<div class="container">';
-        echo '<div class="d-grid gap-10">';
-        echo    '<div class="p-2">';
-        echo        '<a href="index.php?module=Article&action=article&idArticle=' . $idArticle . '">';
-        echo            '<div class="container articles">';
-        echo                '<div class="jumbotron">'; 
-        echo                    '<h1 class="display-6">'.$titreArticle.'</h1>';
-        echo                    '<p class="lead articlesParagraph">'.$contenuArticle.'</p>';
-        echo                    '<div class="div_icons">';
-        echo                        '<img class="icon" src="img/vue.png" alt="vues">';
-        echo                        '<p class="text_of_icon">'.$nbVues.'</p>';
-        echo                        '<img class="icon" src="img/like.png" alt="likes">';
-        echo                        '<p class="text_of_icon">'.$likes.'</p>';
-        echo                        '<img class="icon" src="img/calendar.jpg" alt="calendar">';
-        echo                        '<p class="text_of_icon">'.$dateCreaArticle.'</p>';
-        echo                    '</div>';
-        echo                "</div>";
-        echo            "</div>";
-        echo        '</a>';
-        echo     '</div>';
-        echo '</div>';
-        echo '</div>';
+        echo '<div class="container">
+                 <div class="d-grid gap-10">
+                    <div class="p-2">
+                        <a href="index.php?module=Article&action=article&idArticle=' . $idArticle . '">
+                            <div class="container articles">
+                                <div class="jumbotron">
+                                    <h1 class="display-6">'.$titreArticle.'</h1>
+                                    <p class="lead articlesParagraph">'.$contenuArticle.'</p>
+                                    <div class="div_icons">
+                                        <img class="icon" src="img/vue.png" alt="vues">
+                                        <p class="text_of_icon">'.$nbVues.'</p>
+                                        <img class="icon" src="img/like.png" alt="likes">
+                                        <p class="text_of_icon">'.$likes.'</p>
+                                        <img class="icon" src="img/calendar.jpg" alt="calendar">
+                                        <p class="text_of_icon">'.$dateCreaArticle.'</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>';
     }
 
-    $nbPages = $nbArticles / 10 + 1;
+    $nbPages = $_SESSION['listeArticles']['nbArticles'] / 5 + 1;
 
     echo '<nav>';
     echo       '<ul class="pagination pagination-sm justify-content-center">';
