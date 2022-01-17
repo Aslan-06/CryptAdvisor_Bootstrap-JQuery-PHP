@@ -21,7 +21,6 @@
         $article = $_SESSION['listeArticles'][$articleCompteur];
         //tous les attributs de tuple courrant
         $idArticle = $article['idArticle'];
-        echo $idArticle;
         $titreArticle = $article['titre'];
         $contenuArticle = substr($article['contenuArticle'],0,100).'...';
         $nbVues = $article['nbVues'];
