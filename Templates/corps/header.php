@@ -15,14 +15,21 @@
         #tag-container{display: inline-block;position: relative;vertical-align: middle;width: 360px;}
         #tag-container input{width:100%}
         #tag-container ul{left:0 !important;right:0 !important;max-height:320px;overflow-y:auto;overflow-x:hidden;}
+
+        .navbar-dark{
+            background:#181a20;
+        }
+
+        ul.nav a:hover { color: #fec63d !important; }
+        
     </style>
 </head>
 
 <body class="text-white">
     <header id="header">
 
-        <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid" >
         <a id="lien_logo" href="index.php"> 
                     <img id="img_logo" src="Templates/corps/logo CryptAdvisor.png" alt="Logo de site CryptAdvisor" class="w-14 h-auto"/> 
             </a>
@@ -30,7 +37,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0"  class="background-nav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"  class="background-nav" >
                 <li class="nav-item">
                 <a class="text-light nav-link active" aria-current="page" href="index.php?module=Accueil">Accueil</a>
                 </li>
@@ -67,7 +74,6 @@
             <form class="d-flex">
                 
                 <input class="form-control me-2" id="tag" type="text" placeholder="Entrer un tag" aria-label="tag">
-                <button class="btn btn-outline-success" type="submit">Search</button>
                 <div id="search-results">
                 </div>
             </form>
