@@ -1,9 +1,5 @@
 <?php
     $role = $_SESSION['role'];
-    /*if($role >=3 and isset($_SESSION['demandesCreationArticle'])){
-        $listeDemandes = $_SESSION['demandesCreationArticle'];
-        
-    }*/
 ?>
     <div class="container" id="divFormCreationArticle">
         <h2 class="text-center" id="creerArticleH2">Créer article</h2>

@@ -2,10 +2,10 @@
 
 /***********     HEADER    **********/
 body{
-    width: 99%;
+    width: 100%;
     background: #0b0e11;
-    color:white;
 }
+
 a{
     text-decoration: none;
 }
@@ -84,9 +84,17 @@ nav a{
     display:block;
 }
 
-#message{
-    display: inline;
+#dropdownDemandes{
+    width: max-content;
+}
+.badgesDemandes{
+    float: right;
+    margin-top:7px;
+}
 
+.notification-de-demandes{
+    margin-top:30px;
+    margin-bottom: 10px;
 }
 
 #creerArticleH2{

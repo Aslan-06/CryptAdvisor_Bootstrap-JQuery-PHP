@@ -4,6 +4,18 @@ require_once "./connexion.php";
 
 class ModeleConnexion extends Connexion {
 
+    public function initDemandesCreation(){
+            $req = self::$bdd->prepare("SELECT * FROM demandeCreationArticle;");
+            $req->execute();
+            $_SESSION['demandesCreationArticle'] = $req->fetchALL(PDO::FETCH_ASSOC);
+            $req = self::$bdd->prepare("SELECT * FROM demandeCreationCours;");
+            $req->execute();
+            $_SESSION['demandesCreationCours'] = $req->fetchALL(PDO::FETCH_ASSOC);
+            $req = self::$bdd->prepare("SELECT * FROM demandeCreationForum;");
+            $req->execute();
+            $_SESSION['demandesCreationForum'] = $req->fetchALL(PDO::FETCH_ASSOC);
+    }
+
     public function getUser($email, $pseudo){
         $req = self::$bdd->prepare("SELECT * FROM Utilisateur WHERE email = :email AND pseudo = :pseudo;");
         $req->bindParam("email",$email);

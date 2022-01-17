@@ -1,7 +1,6 @@
 <?php
     
         $article = $_SESSION['article'];
-        
         //tous les attributs de tuple courrant
         $titreArticle = $article['titre'];
         $contenuArticle = $article['contenuArticle'];

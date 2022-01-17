@@ -81,6 +81,7 @@ class ContConnexion{
     }
 
     public function profile(){
+        $this->modele->initDemandesCreation();
         $this->vue->profile();
     }
 

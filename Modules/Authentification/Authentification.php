@@ -20,7 +20,6 @@ class Authentification {
 
     public function render($toDO){
         switch ($toDO){
-
             case "connexion":
                 $this->controleur->connexion();
                 break;
