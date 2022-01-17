@@ -2,14 +2,16 @@
 
 /***********     HEADER    **********/
 body{
-    width: 99%;
+    width: 100%;
     background: #0b0e11;
-    color:white;
 }
 a{
     text-decoration: none;
 }
+.background-nav {
+    background-color: #181a20;
 
+}
 #header {
     height:179px;
     background-color: #181a20;
@@ -42,7 +44,7 @@ a{
     margin-top: 66px;
     text-align: bottom;
 }
-nav :hover{
+.navbar .navbar-expand-lg .navbar-light a:hover{
     color: #fec63d;
 }
 nav a{
@@ -137,3 +139,4 @@ nav a{
     margin:40px;
     color:wheat;
 }
+
