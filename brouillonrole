@@ -1,0 +1,33 @@
+                    // if ($nomduroledemande = 'auteur'){
+                    //     $roledemande = 2;
+                    // }else if ($nomduroledemande = 'modo'){
+                    //     $roledemande = 3;
+                    // }else if($nomduroledemande = 'admin'){
+                    //     $roledemande = 4;
+                    // }
+                //     if ($nomduroledemande == 'auteur'){
+                        
+                //         if($this->modele->getRole($this->modele->getId($_SESSION['pseudo']))=="2"){
+                //             echo"vous etes deja auteur";
+                //         }else{
+                //             $this->modele->addPromoRequest($_SESSION['pseudo'], $roledemande, $message);
+                //             echo"votre demande a été envoyée à un admin";
+                //         }
+                //     }
+                //     if ($nomduroledemande == 'modo'){
+                //         if($this->modele->getRole($this->modele->getId($_SESSION['pseudo']))=="3"){
+                //             echo"vous etes deja modo";
+                //         }else{
+                //             $this->modele->addPromoRequest($_SESSION['pseudo'], $roledemande, $message);
+                //             echo"votre demande a été envoyée à un admin";
+                //         }
+                //     }
+                //     if ($nomduroledemande == 'admin'){
+                //         if($this->modele->getRole($this->modele->getId($_SESSION['pseudo']))=="4"){
+                //             echo"vous etes deja admin";
+                //         }else{
+                //             $this->modele->addPromoRequest($_SESSION['pseudo'], $roledemande, $message);
+                //             echo"votre demande a été envoyée à un admin";
+                //         }
+                //     } 
+                // }
