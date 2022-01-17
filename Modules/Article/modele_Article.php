@@ -25,12 +25,6 @@ class ModeleArticle extends Connexion {
             $idUtilisateur = $req->fetch(PDO::FETCH_ASSOC);
         }
         $listeArticles['page']=$page;
-        if(isset($_SESSION['pseudo'])){
-            $req = self::$bdd->prepare("SELECT pseudoUtilisateur, titreArticle, contenuArticle, dateCreation FROM demandeCreationArticle");
-            $req->execute();
-            $listeDemandes = $req->fetchAll(PDO::FETCH_ASSOC);
-            $_SESSION['demandesCreationArticle'] = $listeDemandes;
-        }
         return $listeArticles;
     }
 

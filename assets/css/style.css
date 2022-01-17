@@ -197,3 +197,43 @@ nav a{
     margin:40px;
     color:wheat;
 }
+
+/*Partie desabonnement*/
+
+#titreDesabo{
+    text-align: center;
+    color: #e49b0f;
+    margin-bottom: 40px;
+}
+
+.texteDesabo{
+    text-align: center;
+    color: white;
+}
+
+.boutonDesabo{
+    font-weight: bold;
+    padding: 25px;
+    font-size: 200%;
+    background-color: #022756;
+
+}
+
+#resizeTriste{
+    height: 35px;
+    width: 35px;
+}
+
+.container {
+  height: 200px;
+  position: relative;
+}
+
+.vertical-center {  
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-left: 415px;
+}

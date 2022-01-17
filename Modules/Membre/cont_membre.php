@@ -17,13 +17,18 @@ class ContMembre{
 
     public function premiumform(){
         if(!empty($_SESSION['pseudo']) && ($this->modele->getPremiumUser($_SESSION['pseudo'])->comptePremium=="0") ){
+            echo "test";
             $this->vue->devenirpremium();
+
         }
         else if ((!empty($_SESSION['pseudo']) && ($this->modele->getPremiumUser($_SESSION['pseudo'])->comptePremium=="1"))){
+            echo "test 2";
             $this->vue->annulerAbonnement();
         }else {
+            echo "test 3";
             $this->vueconn->connexion();
         }
+
     }
 
     public function devenirpremium(){
