@@ -12,9 +12,11 @@ require_once "./connexion.php";
         }
 
         function getRole($id){
-            $req= self::$bdd->prepare("SELECT idRole FROM Utilisateur WHERE idUtilisateur = ?;");
-            $req->execute([$id]);
-            return $req->fetch();
+            $id = $id->idUtilisateur;
+            $req= self::$bdd->prepare("SELECT idRole FROM Utilisateur WHERE idUtilisateur = :id;");
+            $req->bindParam(':id',$id);
+            $req->execute();
+            return $req->fetch(PDO::FETCH_ASSOC)['idRole'];
         }
 
         function getForumFav($id) {
@@ -46,13 +48,48 @@ require_once "./connexion.php";
         function getPremiumUser($pseudo){
             $req = self::$bdd->prepare("SELECT comptePremium FROM Utilisateur where pseudo = ?;");
             $req->execute([$pseudo]);
-            $res = $req->fetch();var_dump($res);
+            $res = $req->fetch();
             return $res;
         }
 
         function removeUserPremium($pseudo){
             $req = self::$bdd->prepare("UPDATE Utilisateur SET comptePremium = 0 where pseudo = ?;");
             $req->execute([$pseudo]);
+        }
+
+        function addPromoRequest($pseudo, $roledemande, $message){
+            $req = self::$bdd->prepare("INSERT INTO DemandePromo (pseudoUtilisateur, roleDemande, messagePromo) VALUES (:pseudo, :roledemande, :msg); ");
+            $req->bindParam(':pseudo', $pseudo);
+            $req->bindParam(':roledemande', $roledemande);
+            $req->bindParam(':msg', $message);
+            $req->execute();
+        }
+
+        function getUserRequest($pseudo){
+            $req = self::$bdd->prepare("SELECT * FROM DemandePromo where pseudoUtilisateur = :pseudo;");
+            $req->bindParam(':pseudo', $pseudo);
+            $req->execute();
+            return $req->fetch();
+        }
+
+        function getAllrequests(){
+            $req = self::$bdd->prepare("SELECT * FROM DemandePromo;");
+            $res = $req->fetchAll();
+            return $res;
+        }
+
+        function accepterPromo($pseudo, $roledemande){
+            $req = self::$bdd->prepare("UPDATE Utilisateur SET idRole = :roledemande WHERE idUtilisateur = :pseudo");
+            $req->bindParam(':pseudo', $pseudo);
+            $req->bindParam(':roledemande', $roledemande);
+            $req->execute();
+            $this->supprimerPromo($pseudo);
+        }
+
+        function supprimerPromo($pseudo){
+            $req = self::$bdd->prepare("DELETE * FROM DemandePromo where pseudoUtilisateur = :pseudo;");
+            $req->bindParam(':pseudo', $pseudo);
+            $req->execute();
         }
     }
 

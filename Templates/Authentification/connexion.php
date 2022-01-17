@@ -1,14 +1,17 @@
-<?php
-echo"
+
+<div >
+    <?php if(isset($_SESSION['erreur']) && !empty($_SESSION['erreur']) ) {
+
+        echo $_SESSION['erreur'];
+        unset($_SESSION['erreur']);
+    }?>
+</div>
+
 <form action='index.php?module=Authentification&action=connexionForm' method='post'>
     <div class='row justify-content-around align-items-center'>
 
         <div class='col-sm-12 col-md-5'>
             <h3 class='text-muted mb-4'>Connexion</h3>
-            <div class='form-floating mb-3'>
-                <input name='email' type='email' class='form-control' id='email' placeholder='mail@exemple.com'>
-                <label for='email'>Votre email</label>
-            </div>
             <div class='form-floating mb-3'>
                 <input name='pseudo' type='text' class='form-control' id='pseudo'>
                 <label for='pseudo'>Votre Pseudo</label>
@@ -22,5 +25,4 @@ echo"
             </div>
         </div>
     </div>
-</form>";
-?>
+</form>

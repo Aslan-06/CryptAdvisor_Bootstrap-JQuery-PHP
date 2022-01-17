@@ -1,6 +1,8 @@
 <?php
 require_once "./Modules/Membre/vue_membre.php";
 require_once "./Modules/Membre/modele_membre.php";
+require_once "./Modules/Authentification/vue_connexion.php";
+require_once "./Modules/Accueil/vue_accueil.php";
 
 class ContMembre{
     private $modele;
@@ -9,6 +11,8 @@ class ContMembre{
     public function __construct(){
         $this->modele = new ModeleMembre();
         $this->vue = new VueMembre();
+        $this->vueconn = new VueConnexion();
+        $this->vueacc = new VueAccueil();
     }
 
     public function premiumform(){
@@ -17,52 +21,73 @@ class ContMembre{
         }
         else if ((!empty($_SESSION['pseudo']) && ($this->modele->getPremiumUser($_SESSION['pseudo'])->comptePremium=="1"))){
             $this->vue->annulerAbonnement();
+        }else {
+            $this->vueconn->connexion();
         }
     }
 
     public function devenirpremium(){
-        if (!isset($_POST['Nomcarte']) or !isset($_POST['cardnumber']) or !isset($_POST['expirydate']) or !isset($_POST['cardnumber'])) {
-             echo"Tous les champs doivent être remplis!";
+        if (empty($_POST['Nomcarte']) or empty($_POST['cardnumber']) or empty($_POST['expirydate']) or empty($_POST['cardnumber'])) {
+             $_SESSION["erreur"] = "Tous les champs doivent être remplis !";
+                if(!headers_sent() and isset($_SERVEUR['HTTP_REFERER']) and !empty($_SERVEUR['HTTP_REFERER'])){
+                    header("Location: ".$_SERVEUR['HTTP_REFERER']);
+                    exit();
+                }else{
+                    header("Location: index.php?module=Membre&action=premiumform");
+                }
          } else {
             $this->modele->addUserPremium($_SESSION['pseudo']);
-            echo"vs êtes maintenant premium";
+            $this->vueacc->accueil();
          }
     }
 
     public function promotionform(){
-        if (!isset($_POST['message']) OR !isset($_POST['ans'])){
-            echo"pas remplis";
-        } else {
-            $roledemande = $_POST['ans'];
-            if ($roledemande == 'auteur'){
-                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo'])=="2")){
-                    echo"vous etes deja auteur";
+        if(isset($_POST['envoyer'])){
+            if (empty($_POST['envoyer']) or empty($_POST['message']) or empty($_POST['ans'])){
+                $_SESSION["erreur"] = "Vous devez choisir un role et ajouter un message !";
+                if(!headers_sent() and isset($_SERVEUR['HTTP_REFERER']) and !empty($_SERVEUR['HTTP_REFERER'])){
+                    header("Location: ".$_SERVEUR['HTTP_REFERER']);
+                    exit();
                 }else{
-                    //ajouter la demande dans la bd
-                    echo"votre demande a été envoyée à un admin";
+                    header("Location: index.php?module=Membre&action=promotion");
+                }
+            } else {
+                $message = $_POST['message'];
+                $nomduroledemande = $_POST['ans'];
+                if($this->modele->getUserRequest($_SESSION['pseudo'])!=NULL){
+                    $_SESSION["erreur"] = "vous avez deja fait une demande";
+                    if(!headers_sent() and isset($_SERVEUR['HTTP_REFERER']) and !empty($_SERVEUR['HTTP_REFERER'])){
+                        header("Location: ".$_SERVEUR['HTTP_REFERER']);
+                        exit();
+                    }else{
+                        header("Location: index.php?module=Membre&action=promotion");
+                    }
+                }else{
+                    $roles = [
+                        "admin"=>4,
+                        "modo"=>3,
+                        "auteur"=>2
+                    ];
+                    if($roles[$nomduroledemande] == $this->modele->getRole($this->modele->getId($_SESSION['pseudo']))){
+                        echo"vous etes deja " . $nomduroledemande;                        
+                    } else{
+                        $this->modele->addPromoRequest($_SESSION['pseudo'], $roles[$nomduroledemande], $message);
+                        echo"votre demande a été envoyée à un admin";
+                    }  
+
                 }
             }
-            if ($roledemande == 'modo'){
-                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo'])=="3")){
-                    echo"vous etes deja modo";
-                }else{
-                    //ajouter la demande dans la bd
-                    echo"votre demande a été envoyée à un admin";
-                }
-            }
-            if ($roledemande == 'admin'){
-                if($this->modele->getRole($this->modele->getId($_SESSION['pseudo'])=="4")){
-                    echo"vous etes deja admin";
-                }else{
-                    //ajouter la demande dans la bd
-                    echo"votre demande a été envoyée à un admin";
-                }
-            } 
         }
+    }
+
+    public function voirdemandes(){
+        $listDemandes = $this->modele->getAllrequests();
+        $this->vue->afficherDemandes($listDemandes);
     }
 
     public function annulerAbonnement(){
         $this->modele->removeUserPremium($_SESSION['pseudo']);
+        $this->vue->devenirpremium();
     }
 
     public function annulerAbonnementform(){
@@ -89,7 +114,14 @@ class ContMembre{
         $this->vue->demanderoleforum(); 
     }
 
-    
+    public function refuserPromo($pseudo){
+        $this->modele->supprimerPromo($pseudo);
+    }
+
+    public function accepterPromo($pseudo, $roledemande){
+        $this->modele->accepterPromo($pseudo, $roledemande);
+        $this->vue->voirdemandes();
+    }
 
 }
 
