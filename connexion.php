@@ -8,7 +8,7 @@
             $username = "dutinfopw201649";
             $password = "tazyzuve";
             $dns = "mysql:host=database-etudiants.iut.univ-paris8.fr;dbname=dutinfopw201649";
-            
+
             try {
                 self::$bdd = new PDO($dns, $username, $password);
                 self::$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

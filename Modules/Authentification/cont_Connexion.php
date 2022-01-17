@@ -44,7 +44,8 @@ class ContConnexion{
             } else {
                 $verifPassword = password_verify($password,$user->password);
                 if($verifPassword){
-                    if(session_status()== PHP_SESSION_DISABLED) session_start();
+                    if(session_status()== PHP_SESSION_DISABLED) 
+                        session_start();
                     $_SESSION['pseudo'] = $pseudo;
                     $this->profile();
                 } else{
