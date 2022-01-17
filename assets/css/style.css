@@ -80,3 +80,31 @@ nav a{
     border-radius: 12px;
     display:block;
 }
+
+footer {
+    background-color: #181a20;
+}
+
+#lienLogoFooter{
+    margin: 0;
+    width: max-content;
+}
+
+#img_logo_footer{
+    width: 231px;
+    height: 90px;
+    margin-right: 150px;
+}
+
+.logo_social{
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.grasEtBlanc{
+    color: white;
+    font-weight: bold;
+}
