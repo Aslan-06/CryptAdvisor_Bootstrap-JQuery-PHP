@@ -9,11 +9,13 @@ body{
 a{
     text-decoration: none;
 }
+.background-nav {
+    background-color: #181a20;
 
+}
 #header {
     height:179px;
     background-color: #181a20;
-    
 }
 #img_logo {
     width:308px;
@@ -42,9 +44,7 @@ a{
     margin-top: 66px;
     text-align: bottom;
 }
-nav :hover{
-    color: #fec63d;
-}
+
 nav a{
     text-decoration:none;
     font-family: 'Open Sans';
@@ -197,3 +197,4 @@ nav a{
     margin:40px;
     color:wheat;
 }
+

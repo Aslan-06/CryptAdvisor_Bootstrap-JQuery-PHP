@@ -5,12 +5,16 @@
 }
 
 .span{
-    display:block;
+    display:inline-block;
+}
+
+a:hover{
+    color:#fec63d;
 }
 
 </style>
 
-<div class="bg-red">
+<div class="">
     <span class="span">Articles possédant le tag recherché :</span>
     
     <a href="index.php?module=Article&action="><?= $article->titre?></a>
