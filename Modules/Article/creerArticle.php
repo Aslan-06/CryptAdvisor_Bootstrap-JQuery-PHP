@@ -19,7 +19,7 @@
                 echo 1;
             }
             else{ //role = 2
-                $req = self::$bdd->prepare('INSERT INTO demandeCreationArticle(pseudoUtilisateur, titreArticle, contenuArticle, dateCreation) VALUES(:pseudo,:titre,:contenu, now())');
+                $req = self::$bdd->prepare('INSERT INTO demandeCreationArticle(pseudoUtilisateur, titre, contenu, dateCreation) VALUES(:pseudo,:titre,:contenu, now())');
                 $req->bindParam(':pseudo', $pseudo);
                 $req->bindParam(':titre', $titre);
                 $req->bindParam(':contenu', $contenu);

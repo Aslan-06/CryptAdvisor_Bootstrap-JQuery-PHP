@@ -68,14 +68,14 @@
             </ul>
         </div>
 <?php
-        if($_SESSION['role'] != 4) { // admin ne demande pas de promotion
+        }if($_SESSION['role'] != 4) { // admin ne demande pas de promotion
 ?>
             <div class='card-body'>
                 <a href='index.php?module=Membre&action=promotion'> Faire une demande de promotion</a>
             </div>
 <?php
         }
-    }
+    
 ?>
     </div>
 </div>
