@@ -8,7 +8,7 @@
 
   <!-- Section: Links  -->
   <section class="m-auto">
-    <div class= "container text-center text-md-start mt-5 " >
+    <div class= "container text-center text-md-start mt-5 d-inline" >
       <!-- Grid row -->
       <div class="row mt-3 ">
         <!-- Grid column -->
@@ -99,3 +99,34 @@
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+    $('#tag').keyup(function(){
+
+        $('#search-results').html("")
+            const search = $('#tag').val()
+
+            if(search !=""){
+                $.ajax({
+                    url:"index.php?module=Accueil&action=search",
+                    type:"POST",
+                    data:{
+                        tag:search
+                    },
+                        dataType: 'html',
+                    success:function(result){
+                        console.log(result)
+                        $('#search-results').html(result)
+                    }
+                }) 
+            } else{
+                $('#search-results').html("")
+            }
+    })
+})
+</script>
+</body>
+</html>

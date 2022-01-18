@@ -24,6 +24,7 @@ class ContMembre{
         }else {
             $this->vueconn->connexion();
         }
+
     }
 
     public function devenirpremium(){
@@ -82,7 +83,8 @@ class ContMembre{
 
     public function voirdemandes(){
         $listDemandes = $this->modele->getAllrequests();
-        $this->vue->afficherDemandes($listDemandes);
+        $_SESSION['listeDemandes'] = $listDemandes;
+        $this->vue->afficherDemandes();
     }
 
     public function annulerAbonnement(){
@@ -120,7 +122,7 @@ class ContMembre{
 
     public function accepterPromo($pseudo, $roledemande){
         $this->modele->accepterPromo($pseudo, $roledemande);
-        $this->vue->voirdemandes();
+        $this->vue->afficherDemandes();
     }
 
 }

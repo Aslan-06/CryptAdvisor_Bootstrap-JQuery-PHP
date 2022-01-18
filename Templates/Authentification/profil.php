@@ -74,7 +74,12 @@
                 <a href='index.php?module=Membre&action=promotion'> Faire une demande de promotion</a>
             </div>
 <?php
-        }
+        }if($_SESSION['role'] == 4){ ?>
+        
+        <div class='card-body'>
+                <a href='index.php?module=Membre&action=voirdemandes'> Voir les demandes de promotion</a>
+            </div>
+ <?php       }
     
 ?>
     </div>

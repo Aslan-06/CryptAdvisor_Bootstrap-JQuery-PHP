@@ -30,6 +30,7 @@
 </head>
 
 <body class="text-white">
+    <div id="wrapper">
     <header id="header">
 
         <nav class="navbar navbar-expand-lg navbar-dark">

@@ -29,8 +29,7 @@ class VueMembre extends VueGenerique{
         $this->getAffichage('Membre/demanderole.php');
     }
 
-    public function afficherDemandes($demandes){
-        $_SESSION['listeDemandes'] = $demandes;
+    public function afficherDemandes(){
         $this->getAffichage('Membre/listeDemandes.php');
     }
 }

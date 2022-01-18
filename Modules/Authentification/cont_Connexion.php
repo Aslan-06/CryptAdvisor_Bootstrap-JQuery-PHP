@@ -28,7 +28,7 @@ class ContConnexion{
                     header("Location: index.php?module=Authentification&action=connexion");
                 }
         } else {
-            $pseudo =htmlspecialchars( $_POST['pseudo']);
+            $pseudo =htmlspecialchars($_POST['pseudo']);
             $password = htmlspecialchars($_POST['password']);
             $user = $this->modele->getUser($pseudo);
 
@@ -41,7 +41,7 @@ class ContConnexion{
                     header("Location: index.php?module=Authentification&action=connexion");
                 }
             } else {
-                $verifPassword = password_verify($password,$user->mdp);
+                $verifPassword = password_verify($password,$user->password);
                 if($verifPassword){
                     if(session_status()== PHP_SESSION_DISABLED) 
                         session_start();
