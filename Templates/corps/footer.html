@@ -1,30 +1,101 @@
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script>
-$(document).ready(function(){
-    $('#tag').keyup(function(){
+<!-- Footer -->
+<footer class="text-center text-lg-start text-muted ">
+  <!-- Section: Social media -->
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom "
+  >
+  <!-- Section: Social media -->
 
-        $('#search-results').html("")
-            const search = $('#tag').val()
+  <!-- Section: Links  -->
+  <section class="m-auto">
+    <div class= "container text-center text-md-start mt-5 " >
+      <!-- Grid row -->
+      <div class="row mt-3 ">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ">
+          <!-- Content -->
+          <a id="lienLogoFooter" href="index.php"> 
+                    <img id="img_logo_footer" src="Templates/corps/logo CryptAdvisor.png" alt="Logo de site CryptAdvisor" class="w-14 h-auto"/> 
+          </a>
 
-            if(search !=""){
-                $.ajax({
-                    url:"index.php?module=Accueil&action=search",
-                    type:"POST",
-                    data:{
-                        tag:search
-                    },
-                        dataType: 'html',
-                    success:function(result){
-                        console.log(result)
-                        $('#search-results').html(result)
-                    }
-                }) 
-            } else{
-                $('#search-results').html("")
-            }
-    })
-})
-</script>
-    </body>
+          <!-- Facebook -->
+          <a id="lienLogoFooter" href="index.php"> 
+            <img class="logo_social" src="Templates/corps/logo_facebook.png" alt="Logo Facebook" class="w-14 h-auto logo_social"/>  
+          </a>
 
-</html>
+          <!-- Twitter -->
+          <a id="lienLogoFooter" href="index.php"> 
+            <img class="logo_social" src="Templates/corps/logo_twitter.png" alt="Logo Facebook" class="w-14 h-auto logo_social"/>  
+          </a>
+
+          <!-- Instagram -->
+          <a id="lienLogoFooter" href="index.php"> 
+            <img class="logo_social" src="Templates/corps/logo_instagram.png" alt="Logo Facebook" class="w-14 h-auto logo_social"/>  
+          </a>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4 grasEtBlanc">
+            Site navigation
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Formations</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Cours</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Forums</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Articles</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4 grasEtBlanc">
+            Site information
+          </h6>
+          <p>
+            <a href="#!" class="text-reset ">Terms and conditions</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Privacy policy</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">FAQ</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4 grasEtBlanc">
+            Support and contact
+          </h6>
+          <p><a href="#!" class="text-reset">Nous supporter</a></p>
+          <p>
+            <a href="#!" class="text-reset">A propos</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4 grasEtBlanc " style="background-color: rgba(0, 0, 0, 0.05);">
+    Cryptadvisor © 2021
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
