@@ -4,10 +4,14 @@ class Article {
     private $action;
     private $controleur;
 
-    public function __construct(){
+    public function __construct($Article){
+        $this->init($Article);
+    }
+
+    public function init($Article){
         $this->controleur = new ContArticle();
         $this->action = $this->setAction();
-        $this->render($this->action);
+        $this->render($Article, $this->action);
     }
 
     public function setAction(){
@@ -17,17 +21,17 @@ class Article {
         return $_GET['action'];
     }
 
-    public function render($toDO){
+    public function render($Article, $toDO){
         switch ($toDO){
             case "liste":
                 $page = 1;
                 if(isset($_GET['page'])){
                     $page = $_GET['page'];
                 }
-                $this->controleur->afficherListe($page);
+                $this->controleur->afficherListe($Article, $page);
                 break;
             case "article":
-                $this->controleur->afficherArticle();
+                $this->controleur->afficherArticle($Article);
                 break;
             default:
                 echo"accès interdit";

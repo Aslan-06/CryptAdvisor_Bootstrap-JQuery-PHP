@@ -29,7 +29,7 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownDemandesCreation">
                 <li>
-                    <a class="dropdown-item" href="index.php?module=Authentification&action=demande-creation-cours">
+                    <a class="dropdown-item" href="index.php?module=Authentification&action=demandes-creation-cours">
                         Cours
 <?php
                         if($_SESSION['role'] >=3 && !empty($_SESSION['demandesCreationCours'])):
@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="index.php?module=Authentification&action=demande-creation-articles">
+                    <a class="dropdown-item" href="index.php?module=Authentification&action=demandes-creation-articles">
                         Articles
 <?php
                         if($_SESSION['role'] >=3 && !empty($_SESSION['demandesCreationArticle'])){ 
@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="index.php?module=Authentification&action=demande-creation-forums">
+                    <a class="dropdown-item" href="index.php?module=Authentification&action=demandes-creation-forums">
                         Forums
 <?php
                         if($_SESSION['role'] >=3 && !empty($_SESSION['demandesCreationForum'])){ 

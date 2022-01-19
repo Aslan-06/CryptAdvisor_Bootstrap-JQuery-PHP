@@ -16,9 +16,8 @@ class ModeleConnexion extends Connexion {
             $_SESSION['demandesCreationForum'] = $req->fetchALL(PDO::FETCH_ASSOC);
     }
 
-    public function getUser($email, $pseudo){
-        $req = self::$bdd->prepare("SELECT * FROM Utilisateur WHERE email = :email AND pseudo = :pseudo;");
-        $req->bindParam("email",$email);
+    public function getUser($pseudo){
+        $req = self::$bdd->prepare("SELECT * FROM Utilisateur WHERE pseudo = :pseudo;");
         $req->bindParam("pseudo", $pseudo);
         $req->execute();
         return $req->fetch();

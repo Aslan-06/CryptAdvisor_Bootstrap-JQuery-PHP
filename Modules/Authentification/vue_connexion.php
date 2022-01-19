@@ -17,4 +17,8 @@ class VueConnexion extends VueGenerique{
         $this->getAffichage('Authentification/profil.php');
     }
 
+    public function afficherDemandes(){
+        $this->getAffichage('Authentification/demandesDeCreation.php');
+    }
+
 }

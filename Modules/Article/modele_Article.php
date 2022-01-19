@@ -2,46 +2,81 @@
 require_once "./connexion.php";
 
 class ModeleArticle extends Connexion {
-
-    public function getListeArticles($page){
+    public function getListeArticles($Article, $page){
         if($page < 1)
             $page = 1;
         $listeDebut = ($page-1)*5;
-        $req = self::$bdd->prepare("SELECT idArticle, titre, contenuArticle, nbVues, likes, dateCreaArticle FROM Article LIMIT 5 OFFSET ?");
+        $req;
+        switch($Article){
+            case "Article":
+                $req = self::$bdd->prepare("SELECT idArticle, titre, contenuArticle, nbVues, likes, dateCreaArticle FROM Article LIMIT 5 OFFSET ?");
+                break;
+            case "Cours":
+                $req = self::$bdd->prepare("SELECT idCours, titre, contenu, nbVues FROM Cours LIMIT 5 OFFSET ?");
+                break;
+            case "Forum":
+                $req = self::$bdd->prepare("SELECT idForum, titre, contenu, nbVues, likes, dateCrea FROM Forum LIMIT 5 OFFSET ?");
+                break;
+        }
         $req->bindParam(1, $listeDebut, PDO::PARAM_INT);
         $req->execute();
         $listeArticles = $req->fetchAll(PDO::FETCH_ASSOC);
 
-        $req = self::$bdd->prepare("SELECT count(*) as nbArticles FROM Article;");
+        switch($Article){
+            case "Article":
+                $req = self::$bdd->prepare("SELECT count(*) as nbArticles FROM Article;");
+                break;
+            case "Cours":
+                $req = self::$bdd->prepare("SELECT count(*) as nbArticles FROM Cours;");
+                break;
+            case "Forum":
+                $req = self::$bdd->prepare("SELECT count(*) as nbArticles FROM Forum;");
+                break;
+                
+        }
         $req->execute();
         $nbArticles = $req->fetch(PDO::FETCH_ASSOC)['nbArticles'];
 
         $listeArticles['nbArticles'] = $nbArticles;
-
-        if(isset($_SESSION['pseudo'])){
-            $req = self::$bdd->prepare("SELECT idUtilisateur FROM Utilisateur WHERE pseudo = ?");
-            $req->bindParam(1, $_SESSION['pseudo'], PDO::PARAM_STR);
-            $req->execute();
-            $idUtilisateur = $req->fetch(PDO::FETCH_ASSOC);
-        }
+        $listeArticles['ceQuonVeutAfficher']=$Article; // "Article", "Cours" ou "Forum"
         $listeArticles['page']=$page;
-        if(isset($_SESSION['pseudo'])){
-            $req = self::$bdd->prepare("SELECT pseudoUtilisateur, titreArticle, contenuArticle, dateCreation FROM demandeCreationArticle");
-            $req->execute();
-            $listeDemandes = $req->fetchAll(PDO::FETCH_ASSOC);
-            $_SESSION['demandesCreationArticle'] = $listeDemandes;
-        }
+
         return $listeArticles;
     }
 
-    public function getArticle($id){
-        $req = self::$bdd->prepare("UPDATE Article SET nbVues = nbVues+1 where idArticle = ?");
+    public function getArticle($Article, $id){
+        $req;
+        switch($Article){
+            case "Article":
+                $req = self::$bdd->prepare("UPDATE Article SET nbVues = nbVues+1 where idArticle = ?");
+                break;
+            case "Cours":
+                $req = self::$bdd->prepare("UPDATE Cours SET nbVues = nbVues+1 where idCours = ?");
+                break;
+            case "Forum":
+                $req = self::$bdd->prepare("UPDATE Forum SET nbVues = nbVues+1 where idForum = ?");
+                break;
+        }
         $req->bindParam(1, $id, PDO::PARAM_INT);
         $req->execute();
-        $req = self::$bdd->prepare("SELECT titre, contenuArticle FROM Article where idArticle = ?");
+
+        $req;
+        
+        switch($Article){
+            case "Article":
+                $req = self::$bdd->prepare("SELECT titre, contenuArticle FROM Article where idArticle = ?");
+                break;
+            case "Cours":
+                $req = self::$bdd->prepare("SELECT titre, contenu FROM Cours where idCours = ?");
+                break;
+            case "Forum":
+                $req = self::$bdd->prepare("SELECT titre, contenu FROM Forum where idForum = ?");
+                break;
+        }
         $req->bindParam(1, $id, PDO::PARAM_INT);
         $req->execute();
         $article = $req->fetch(PDO::FETCH_ASSOC);
+        $article['ceQuonVeutAfficher']=$Article;
         return $article;
     }
 }

@@ -115,4 +115,10 @@ class ContConnexion{
         $this->vue->profile();
     }
 
+    public function recupererDemandesCreation($deQuoi){
+        $_SESSION['demandesDe'] = $deQuoi;
+        $this->modele->initDemandesCreation();
+        $this->vue->afficherDemandes();
+    }
+
 }

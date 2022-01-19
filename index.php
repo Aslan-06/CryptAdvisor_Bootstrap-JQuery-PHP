@@ -20,5 +20,9 @@
     require_once "./Modules/$module/$module.php"; 
 
     Connexion::initConnexion();
-    new $module();
+    if($module == "Article"){
+        new $module($module); // à constructeur on passe la chaine "Article"
+    }
+    else
+        new $module();
 ?>

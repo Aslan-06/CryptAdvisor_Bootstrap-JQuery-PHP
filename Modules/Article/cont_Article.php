@@ -11,14 +11,25 @@ class ContArticle{
         $this->vue = new VueArticle();
     }
 
-    public function afficherListe($page){
-        $listeArticles = $this->modele->getListeArticles($page);
+    public function afficherListe($Article, $page){
+        $listeArticles = $this->modele->getListeArticles($Article, $page);
         $this->vue->afficherListe($listeArticles);
     }
 
-    public function afficherArticle(){
-        $idArticle = $_GET['idArticle'];
-        $article = $this->modele->getArticle($idArticle);
+    public function afficherArticle($Article){
+        $idArticle;
+        switch($Article){
+            case "Article":
+                $idArticle = $_GET['idArticle'];
+                break;
+            case "Cours":
+                $idArticle = $_GET['idCours'];
+                break;
+            case "Forum":
+                $idArticle = $_GET['idForum'];
+                break;
+        }
+        $article = $this->modele->getArticle($Article, $idArticle);
         $this->vue->afficherArticle($article);
     }
 }
