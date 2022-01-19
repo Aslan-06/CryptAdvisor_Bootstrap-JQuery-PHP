@@ -29,4 +29,8 @@ class ContAccueil{
             }
         }
     }
+    public function derniers(){
+        $derniersarticles = $this->modele->last3articles();
+        $_SESSION['derniersarticles'] = $derniersarticles;
+    }
 }

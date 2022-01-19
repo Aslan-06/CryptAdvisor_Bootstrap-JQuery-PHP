@@ -1,4 +1,11 @@
-
+<?php
+    $idArticle0 = $_SESSION['derniersarticles'][0]->idArticle;
+    $titre0 = $_SESSION['derniersarticles'][0]->titre;
+    $idArticle1 = $_SESSION['derniersarticles'][1]->idArticle;
+    $titre1 = $_SESSION['derniersarticles'][1]->titre;
+    $idArticle2 = $_SESSION['derniersarticles'][2]->idArticle;
+    $titre2 = $_SESSION['derniersarticles'][2]->titre;
+?>
     <div class="border-bottom p-5 ">
         <h3 class="m-4"> Qu'est-ce que les cryptomonnaies ?</h3>
 
@@ -19,15 +26,19 @@
             </div>
             <div class="carousel-inner">
             <div class="carousel-item active">
-                <p>ceci est un test</p>
-                <p> Auteur </p>
+                <img class="d-block w-100" src="./img/image2btc.jpeg" alt="First slide">
+                <a href="index.php?module=Article&action=article&idArticle=<?=''.$idArticle0.''?>"><p class="text-center">Titre</p></a>
+                <p class="text-center"> <?=''.$titre0.''?> </p>
             </div>
             <div class="carousel-item">
-            <p>ceci est un test 2</p>
-                <p> Auteur </p>
+                <img class="d-block w-100" src="./img/image3btc.jpg" alt="First slide">
+                <a href="index.php?module=Article&action=article&idArticle=<?=''.$idArticle1.''?>"><p class="text-center">Titre</p></a>
+                <p class="text-center"> <?=''.$titre1.''?> </p>
             </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
+            <div class="carousel-item">Titre
+                <img class="d-block w-100" src="./img/image4btc.jpg" alt="Third slide">
+                <a href="index.php?module=Article&action=article&idArticle=<?=''.$idArticle2.''?>"><p class="text-center">Titre</p></a>
+                <p class="text-center"> <?=''.$titre2.''?> </p>
             </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -41,39 +52,8 @@
         </div>
     </div>
 
-    <div class="p-5 border-bottom">
-        <h2 class="text-center">Formations recommandées pour les débutants</h2>
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img class="d-block w-100" src="..." alt="First slide">
-                </div>
-                <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Third slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-        
-    </div>
-
-    <div class="p-5 border-bottom">
+    <div class="p-5">
         <h2 class="text-center">À propos</h2>
 
         <div class="d-flex justify-content-around p-4">
@@ -87,7 +67,7 @@
             </div>
             <div class=" align-items-center">
                 <img src="./Templates/Accueil/salem.jpeg" class="img-responsive rounded-pill">
-                <p>Busra Abur</p>
+                <p>Thomas Neto</p>
             </div>
         </div>
     </div>

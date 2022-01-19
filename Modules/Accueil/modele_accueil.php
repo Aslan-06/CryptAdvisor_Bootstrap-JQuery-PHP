@@ -10,4 +10,11 @@ class ModeleAccueil extends Connexion{
         $req->execute();
         return $req->fetchAll();
     }
+    
+    public function last3articles(){
+        $req = self::$bdd->prepare("SELECT * from Article ORDER BY dateCreaArticle DESC LIMIT 3;");
+        $req->execute();
+        $res = $req->fetchAll();
+        return $res;
+    }
 }
