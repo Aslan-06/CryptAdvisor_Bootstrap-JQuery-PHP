@@ -11,9 +11,6 @@ class ModeleArticle extends Connexion {
             case "Article":
                 $req = self::$bdd->prepare("SELECT idArticle, titre, contenuArticle, nbVues, likes, dateCreaArticle FROM Article LIMIT 5 OFFSET ?");
                 break;
-            case "Cours":
-                $req = self::$bdd->prepare("SELECT idCours, titre, contenu, nbVues FROM Cours LIMIT 5 OFFSET ?");
-                break;
             case "Forum":
                 $req = self::$bdd->prepare("SELECT idForum, titre, contenu, nbVues, likes, dateCrea FROM Forum LIMIT 5 OFFSET ?");
                 break;
@@ -25,9 +22,6 @@ class ModeleArticle extends Connexion {
         switch($Article){
             case "Article":
                 $req = self::$bdd->prepare("SELECT count(*) as nbArticles FROM Article;");
-                break;
-            case "Cours":
-                $req = self::$bdd->prepare("SELECT count(*) as nbArticles FROM Cours;");
                 break;
             case "Forum":
                 $req = self::$bdd->prepare("SELECT count(*) as nbArticles FROM Forum;");
@@ -48,9 +42,6 @@ class ModeleArticle extends Connexion {
         switch($Article){
             case "Article":
                 $req = self::$bdd->prepare("UPDATE Article SET nbVues = nbVues+1 where idArticle = ?");
-                break;
-            case "Cours":
-                $req = self::$bdd->prepare("UPDATE Cours SET nbVues = nbVues+1 where idCours = ?");
                 break;
             case "Forum":
                 $req = self::$bdd->prepare("UPDATE Forum SET nbVues = nbVues+1 where idForum = ?");
