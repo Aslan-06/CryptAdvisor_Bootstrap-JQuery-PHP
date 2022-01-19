@@ -58,7 +58,7 @@
                                         }
 ?>
 <?php
-                                        if(!empty($nbdateCreaArticle)){
+                                        if(!empty($dateCreaArticle)){
 ?>
                                             <img class="icon" src="img/calendar.jpg" alt="calendar">
                                             <p class="text_of_icon"> <?=$dateCreaArticle?> </p>

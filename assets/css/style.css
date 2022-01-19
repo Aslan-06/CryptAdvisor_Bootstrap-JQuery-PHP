@@ -266,6 +266,10 @@ nav a{
   margin-left: 415px;
 }
 
+footer{
+    margin-top:50px;
+}
+
 /***********     COMMENTAIRE    **********/
 
 .green-border-focus .form-control:focus {
