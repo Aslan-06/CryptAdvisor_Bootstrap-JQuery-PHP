@@ -25,6 +25,7 @@ class Accueil {
                 break;
             default:
                 $this->controleur->accueil();
+                $this->controleur->accueil();
                 break;
         }
     }
