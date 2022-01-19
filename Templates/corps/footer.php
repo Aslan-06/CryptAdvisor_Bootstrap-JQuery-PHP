@@ -116,7 +116,7 @@ $(document).ready(function(){
                     },
                         dataType: 'html',
                     success:function(result){
-                        console.log(result)
+                        console.log(result+123)
                         $('#search-results').html(result)
                     }
                 }) 
