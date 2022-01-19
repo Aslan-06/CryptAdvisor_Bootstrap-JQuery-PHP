@@ -24,6 +24,7 @@ class ContMembre{
         }else {
             $this->vueconn->connexion();
         }
+
     }
 
     public function devenirpremium(){
@@ -72,7 +73,13 @@ class ContMembre{
                         echo"vous etes deja " . $nomduroledemande;                        
                     } else{
                         $this->modele->addPromoRequest($_SESSION['pseudo'], $roles[$nomduroledemande], $message);
-                        echo"votre demande a été envoyée à un admin";
+                        $_SESSION["erreur"] = "Votre demande a été envoyée à un admin !";
+                        if(!headers_sent() and isset($_SERVEUR['HTTP_REFERER']) and !empty($_SERVEUR['HTTP_REFERER'])){
+                            header("Location: ".$_SERVEUR['HTTP_REFERER']);
+                            exit();
+                        }else{
+                            header("Location: index.php?module=Membre&action=promotion");
+                        }
                     }  
 
                 }
@@ -82,7 +89,8 @@ class ContMembre{
 
     public function voirdemandes(){
         $listDemandes = $this->modele->getAllrequests();
-        $this->vue->afficherDemandes($listDemandes);
+        $_SESSION['listeDemandes'] = $listDemandes;
+        $this->vue->afficherDemandes();
     }
 
     public function annulerAbonnement(){
@@ -116,13 +124,13 @@ class ContMembre{
 
     public function refuserPromo($pseudo){
         $this->modele->supprimerPromo($pseudo);
+        $this->voirdemandes();
     }
 
     public function accepterPromo($pseudo, $roledemande){
         $this->modele->accepterPromo($pseudo, $roledemande);
-        $this->vue->voirdemandes();
+        $this->voirdemandes();
     }
-
 }
 
 ?>

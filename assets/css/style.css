@@ -2,18 +2,34 @@
 
 /***********     HEADER    **********/
 body{
-    width: 100%;
+    min-width: 100%;
     background: #0b0e11;
 }
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#bodyContent{
+    display: block;
+    margin: 0  0 200px 0;
+}
+
 
 a{
     text-decoration: none;
 }
+.background-nav {
+    background-color: #181a20;
 
+}
 #header {
     height:179px;
     background-color: #181a20;
-    
+    z-index: 100000000;
+    position: relative;
 }
 #img_logo {
     width:308px;
@@ -42,9 +58,7 @@ a{
     margin-top: 66px;
     text-align: bottom;
 }
-nav :hover{
-    color: #fec63d;
-}
+
 nav a{
     text-decoration:none;
     font-family: 'Open Sans';
@@ -196,4 +210,65 @@ nav a{
 .paragrapheArticle{
     margin:40px;
     color:wheat;
+}
+
+
+
+.logo_social{
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.grasEtBlanc{
+    color: white;
+    font-weight: bold;
+}
+/*Partie desabonnement*/
+
+#titreDesabo{
+    text-align: center;
+    color: #e49b0f;
+    margin-bottom: 40px;
+}
+
+.texteDesabo{
+    text-align: center;
+    color: white;
+}
+
+.boutonDesabo{
+    font-weight: bold;
+    padding: 25px;
+    font-size: 200%;
+    background-color: #022756;
+
+}
+
+#resizeTriste{
+    height: 35px;
+    width: 35px;
+}
+
+.container {
+  height: 200px;
+  position: relative;
+}
+
+.vertical-center {  
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-left: 415px;
+}
+
+/***********     COMMENTAIRE    **********/
+
+.green-border-focus .form-control:focus {
+    border: 1px solid #8bc34a;
+    box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, .25);
 }

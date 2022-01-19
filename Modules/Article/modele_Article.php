@@ -40,7 +40,6 @@ class ModeleArticle extends Connexion {
         $listeArticles['nbArticles'] = $nbArticles;
         $listeArticles['ceQuonVeutAfficher']=$Article; // "Article", "Cours" ou "Forum"
         $listeArticles['page']=$page;
-
         return $listeArticles;
     }
 
@@ -66,9 +65,6 @@ class ModeleArticle extends Connexion {
             case "Article":
                 $req = self::$bdd->prepare("SELECT titre, contenuArticle FROM Article where idArticle = ?");
                 break;
-            case "Cours":
-                $req = self::$bdd->prepare("SELECT titre, contenu FROM Cours where idCours = ?");
-                break;
             case "Forum":
                 $req = self::$bdd->prepare("SELECT titre, contenu FROM Forum where idForum = ?");
                 break;
@@ -78,5 +74,21 @@ class ModeleArticle extends Connexion {
         $article = $req->fetch(PDO::FETCH_ASSOC);
         $article['ceQuonVeutAfficher']=$Article;
         return $article;
+    }
+
+    public function posterMessage($idArticle, $pseudo, $message){
+        $req = self::$bdd->prepare("INSERT INTO Message (pseudoUtilisateur, texte, datePublication, idArticle) VALUES (:pseudo, :texte, now(), :idArticle); ");
+        $req->bindParam(':idArticle', $idArticle, PDO::PARAM_INT);
+        $req->bindParam(':pseudo', $pseudo);
+        $req->bindParam(':texte', $message);
+        $req->execute();
+    }
+
+    public function getAllComments($idArticle){
+        $req = self::$bdd->prepare("SELECT * from Message where idArticle = :idArticle;");
+        $req->bindParam(':idArticle', $idArticle);
+        $req->execute();
+        $res = $req->fetchAll();
+        return $res;
     }
 }
