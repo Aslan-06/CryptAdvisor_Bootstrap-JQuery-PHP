@@ -10,9 +10,8 @@
             include_once "Templates/$path";
             $contenu = ob_get_clean();
             include_once "Templates/corps/header.php";
-            echo "<div id='bodyContent'>";
+           
             echo $contenu;
-            echo "</div>";
             include_once "Templates/corps/footer.php";
         }
 

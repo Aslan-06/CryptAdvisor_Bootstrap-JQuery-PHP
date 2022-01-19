@@ -18,8 +18,30 @@ body{
 }
 
 footer{
-    display: block;
-    margin-top: auto;
+    background-color: #181a20;
+
+}
+
+@media (max-width: 1210px) {
+    
+    footer{
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 915px) {
+    
+    footer{
+        height: 350px !important;
+    }
+}
+
+
+@media (max-width: 300px) {
+    
+    footer{
+        height: 500px !important;
+    }
 }
 
 a{
@@ -216,20 +238,7 @@ nav a{
     color:wheat;
 }
 
-footer {
-    background-color: #181a20;
-}
 
-#lienLogoFooter{
-    margin: 0;
-    width: max-content;
-}
-
-#img_logo_footer{
-    width: 231px;
-    height: 90px;
-    margin-right: 150px;
-}
 
 .logo_social{
     width: 30px;

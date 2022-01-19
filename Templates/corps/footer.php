@@ -1,107 +1,57 @@
-<!-- Footer -->
-<footer class="text-center text-lg-start text-muted ">
-  <!-- Section: Social media -->
-  <section
-    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom "
-  >
-  <!-- Section: Social media -->
+</div>
+<footer class="mt-auto">
+  <div class="container d-flex align-items-center justify-content-between flex-wrap">
 
-  <!-- Section: Links  -->
-  <section class="m-auto">
-    <div class= "container text-center text-md-start mt-5 d-inline" >
-      <!-- Grid row -->
-      <div class="row mt-3 ">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ">
-          <!-- Content -->
-          <a id="lienLogoFooter" href="index.php"> 
-                    <img id="img_logo_footer" src="Templates/corps/logo CryptAdvisor.png" alt="Logo de site CryptAdvisor" class="w-14 h-auto"/> 
-          </a>
+    <div>
+    <span class="d-block">
+        <a href="index.php"><img src="Templates/corps/logo CryptAdvisor.png" alt="" class="w-50 h-auto"></a>
+        </span>
+        <span class="d-block mt-3 ">
+        <a  href="index.php" class="text-reset fs-4 me-4 "> 
+          <i class="fa-brands fa-facebook text-primary"></i>
+        </a>
 
-          <!-- Facebook -->
-          <a id="lienLogoFooter" href="index.php"> 
-            <img class="logo_social" src="Templates/corps/logo_facebook.png" alt="Logo Facebook" class="w-14 h-auto logo_social"/>  
-          </a>
+        <a href="index.php" class="text-reset fs-4 me-4"> 
+          <i class="fa-brands fa-twitter"></i>
+        </a>
 
-          <!-- Twitter -->
-          <a id="lienLogoFooter" href="index.php"> 
-            <img class="logo_social" src="Templates/corps/logo_twitter.png" alt="Logo Facebook" class="w-14 h-auto logo_social"/>  
-          </a>
-
-          <!-- Instagram -->
-          <a id="lienLogoFooter" href="index.php"> 
-            <img class="logo_social" src="Templates/corps/logo_instagram.png" alt="Logo Facebook" class="w-14 h-auto logo_social"/>  
-          </a>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4 grasEtBlanc">
-            Site navigation
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Formations</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Cours</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Forums</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Articles</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4 grasEtBlanc">
-            Site information
-          </h6>
-          <p>
-            <a href="#!" class="text-reset ">Terms and conditions</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Privacy policy</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">FAQ</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4 grasEtBlanc">
-            Support and contact
-          </h6>
-          <p><a href="#!" class="text-reset">Nous supporter</a></p>
-          <p>
-            <a href="#!" class="text-reset">A propos</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row -->
+        <a  href="index.php" class="text-reset fs-4 "> 
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        </span>
     </div>
-  </section>
-  <!-- Section: Links  -->
+    <div>
+    <h6>Site navigation</h6>
+          <ul class="list-unstyled">
+            <li class="ps-2"><a href="" class="text-reset">Formations</a> </li>
+            <li class="ps-2"><a href="" class="text-reset">Cours</a> </li>
+            <li class="ps-2"><a href="" class="text-reset">Forums</a> </li>
+            <li class="ps-2"><a href="" class="text-reset">Articles</a> </li>
+          </ul>
+    </div>
 
-  <!-- Copyright -->
-  <div class="text-center p-4 grasEtBlanc " style="background-color: rgba(0, 0, 0, 0.05);">
-    Cryptadvisor © 2021
+    <div>
+    <h6>Site information</h6>
+           <ul class="list-unstyled">
+            <li class="ps-2"><a href="" class="text-reset">Terms and conditions</a> </li>
+            <li class="ps-2"><a href="" class="text-reset">Privacy policy</a> </li>
+            <li class="ps-2"><a href="" class="text-reset">FAQ</a> </li>
+          </ul>
+    </div>
+    <div>
+    <h6>Support and contact</h6>
+          <ul class="list-unstyled">
+            <li class="ps-2"><a href="" class="text-reset">Nous supporter</a> </li>
+            <li class="ps-2"><a href="" class="text-reset">A propos</a> </li>
+          </ul>
+    </div>
+    
   </div>
-  <!-- Copyright -->
 </footer>
-<!-- Footer -->
 
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script>
 $(document).ready(function(){
     $('#tag').keyup(function(){
@@ -130,3 +80,44 @@ $(document).ready(function(){
 </script>
 </body>
 </html>
+<!-- 
+<footer class="pt-3 mt-auto  w-100 ">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <span class="d-block">
+        <a href="index.php"><img src="Templates/corps/logo CryptAdvisor.png" alt="" class="w-75 h-auto"></a>
+        </span>
+        <span class="d-block text-center">
+        <a id="lienLogoFooter" href="index.php"> 
+            <img class="logo_social" src="Templates/corps/logo_facebook.png" alt="Logo Facebook" class="w-25 h-auto logo_social"/>  
+          </a>
+
+          <a id="lienLogoFooter" href="index.php"> 
+            <img class="logo_social" src="Templates/corps/logo_twitter.png" alt="Logo Facebook" class="w-25 h-auto logo_social"/>  
+          </a>
+
+          <a id="lienLogoFooter" href="index.php"> 
+            <img class="logo_social" src="Templates/corps/logo_instagram.png" alt="Logo Facebook" class="w-25 h-auto logo_social"/>  
+          </a>
+        </span>
+
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+          
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-3">
+          
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-3">
+
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+
+
+
