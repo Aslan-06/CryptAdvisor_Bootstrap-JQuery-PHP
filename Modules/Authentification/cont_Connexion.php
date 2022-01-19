@@ -41,7 +41,7 @@ class ContConnexion{
                     header("Location: index.php?module=Authentification&action=connexion");
                 }
             } else {
-                $verifPassword = password_verify($password,$user->password);
+                $verifPassword = password_verify($password,$user->mdp);
                 if($verifPassword){
                     if(session_status()== PHP_SESSION_DISABLED) 
                         session_start();

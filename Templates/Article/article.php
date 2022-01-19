@@ -27,7 +27,7 @@
                 if(isset($_GET['id'.$ceQuonVeutAfficher]) && !empty($_GET['id'.$ceQuonVeutAfficher])){
 ?>
                     <button class="btn" id="buttonLike"><img src="img/liking.png" alt="put like"><p>J'aime</p></button>  
-            <?php endif; ?>
+            <?php } ?>
         </div>
             
             <h2 class="text-center">Commentaires</h2>
