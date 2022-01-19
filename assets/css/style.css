@@ -2,7 +2,7 @@
 
 /***********     HEADER    **********/
 body{
-    width: 100%;
+    min-width: 100%;
     background: #0b0e11;
 }
 
@@ -17,32 +17,6 @@ body{
     margin: 0  0 200px 0;
 }
 
-footer{
-    background-color: #181a20;
-
-}
-
-@media (max-width: 1210px) {
-    
-    footer{
-        height: 300px !important;
-    }
-}
-
-@media (max-width: 915px) {
-    
-    footer{
-        height: 350px !important;
-    }
-}
-
-
-@media (max-width: 300px) {
-    
-    footer{
-        height: 500px !important;
-    }
-}
 
 a{
     text-decoration: none;
@@ -290,4 +264,11 @@ nav a{
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   margin-left: 415px;
+}
+
+/***********     COMMENTAIRE    **********/
+
+.green-border-focus .form-control:focus {
+    border: 1px solid #8bc34a;
+    box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, .25);
 }

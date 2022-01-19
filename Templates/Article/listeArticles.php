@@ -1,3 +1,11 @@
+<div >
+    <?php if(isset($_SESSION['erreur']) && !empty($_SESSION['erreur']) ) {
+
+        echo $_SESSION['erreur'];
+        unset($_SESSION['erreur']);
+    }?>
+</div>
+
 <?php
     
     $nbArticlesAAfficher = count($_SESSION['listeArticles']) - 2; // y'a é attributs qui ne sont pas les articles a afficher

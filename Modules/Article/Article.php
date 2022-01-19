@@ -29,6 +29,9 @@ class Article {
             case "article":
                 $this->controleur->afficherArticle();
                 break;
+            case "posterMessage":
+                $this->controleur->posterMessage($_GET["idArticleMessage"]);
+                break;
             default:
                 echo"accès interdit";
                 break;

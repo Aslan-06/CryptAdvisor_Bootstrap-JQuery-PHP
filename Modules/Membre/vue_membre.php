@@ -32,4 +32,6 @@ class VueMembre extends VueGenerique{
     public function afficherDemandes(){
         $this->getAffichage('Membre/listeDemandes.php');
     }
+
+    
 }

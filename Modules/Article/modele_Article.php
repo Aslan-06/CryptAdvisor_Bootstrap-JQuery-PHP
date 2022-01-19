@@ -38,10 +38,26 @@ class ModeleArticle extends Connexion {
         $req = self::$bdd->prepare("UPDATE Article SET nbVues = nbVues+1 where idArticle = ?");
         $req->bindParam(1, $id, PDO::PARAM_INT);
         $req->execute();
-        $req = self::$bdd->prepare("SELECT titre, contenuArticle FROM Article where idArticle = ?");
+        $req = self::$bdd->prepare("SELECT * FROM Article where idArticle = ?");
         $req->bindParam(1, $id, PDO::PARAM_INT);
         $req->execute();
         $article = $req->fetch(PDO::FETCH_ASSOC);
         return $article;
+    }
+
+    public function posterMessage($idArticle, $pseudo, $message){
+        $req = self::$bdd->prepare("INSERT INTO Message (pseudoUtilisateur, texte, datePublication, idArticle) VALUES (:pseudo, :texte, now(), :idArticle); ");
+        $req->bindParam(':idArticle', $idArticle, PDO::PARAM_INT);
+        $req->bindParam(':pseudo', $pseudo);
+        $req->bindParam(':texte', $message);
+        $req->execute();
+    }
+
+    public function getAllComments($idArticle){
+        $req = self::$bdd->prepare("SELECT * from Message where idArticle = :idArticle;");
+        $req->bindParam(':idArticle', $idArticle);
+        $req->execute();
+        $res = $req->fetchAll();
+        return $res;
     }
 }

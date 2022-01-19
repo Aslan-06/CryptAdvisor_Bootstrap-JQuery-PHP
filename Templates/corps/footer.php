@@ -1,52 +1,100 @@
 </div>
-<footer class="mt-auto">
-  <div class="container d-flex align-items-center justify-content-between flex-wrap">
+<footer style="background:#181a20" class="pt-4">
 
-    <div>
-    <span class="d-block">
-        <a href="index.php"><img src="Templates/corps/logo CryptAdvisor.png" alt="" class="w-50 h-auto"></a>
-        </span>
-        <span class="d-block mt-3 ">
-        <a  href="index.php" class="text-reset fs-4 me-4 "> 
-          <i class="fa-brands fa-facebook text-primary"></i>
-        </a>
+<div class="container">
 
-        <a href="index.php" class="text-reset fs-4 me-4"> 
-          <i class="fa-brands fa-twitter"></i>
-        </a>
+ <div class="row">
 
-        <a  href="index.php" class="text-reset fs-4 "> 
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        </span>
-    </div>
-    <div>
-    <h6>Site navigation</h6>
-          <ul class="list-unstyled">
-            <li class="ps-2"><a href="" class="text-reset">Formations</a> </li>
-            <li class="ps-2"><a href="" class="text-reset">Cours</a> </li>
-            <li class="ps-2"><a href="" class="text-reset">Forums</a> </li>
-            <li class="ps-2"><a href="" class="text-reset">Articles</a> </li>
-          </ul>
-    </div>
+   <div class="col-sm-12 col-md-5 col-lg-3">
 
-    <div>
-    <h6>Site information</h6>
-           <ul class="list-unstyled">
-            <li class="ps-2"><a href="" class="text-reset">Terms and conditions</a> </li>
-            <li class="ps-2"><a href="" class="text-reset">Privacy policy</a> </li>
-            <li class="ps-2"><a href="" class="text-reset">FAQ</a> </li>
-          </ul>
-    </div>
-    <div>
-    <h6>Support and contact</h6>
-          <ul class="list-unstyled">
-            <li class="ps-2"><a href="" class="text-reset">Nous supporter</a> </li>
-            <li class="ps-2"><a href="" class="text-reset">A propos</a> </li>
-          </ul>
-    </div>
-    
-  </div>
+    <div class="">
+
+      <div class="footer-logo">
+
+        <img src="Templates/corps/logo CryptAdvisor.png" class="img-fluid w-75">
+
+      </div>
+
+      <div class="socials d-flex justify-content-evenly mt-3">
+
+        <a href="#" class="text-reset "><i class="text-light fs-4 fa-brands fa-facebook"></i></a>
+
+        <a href="#" class="text-reset "><i class="text-light fs-4 fa-brands fa-twitter"></i></a>
+
+        <a href="#" class="text-reset "><i class="text-light fs-4 fa-brands fa-instagram"></i></a>
+
+      </div>
+
+   </div>
+
+   </div>
+
+   <div class="col-sm-12 col-md-7 col-lg-9 row">
+
+   <div class="col-sm-12 col-md-6 col-lg-4">
+
+     <h6 class=" fw-bolder fs-6 text-light">Website plan</h6>
+
+     <ul class="list-unstyled">
+
+       <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">Cours</a></li>
+
+       
+
+       <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">Formations</a></li>
+
+       
+
+       <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">Forums</a></li>
+
+       
+
+       <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">Articles</a></li>
+
+
+     </ul>
+
+   </div>
+
+
+   <div class="col-sm-12 col-md-6 col-lg-4">
+
+    <h6 class=" fw-bolder fs-6 text-light">Website Informations</h6>
+
+    <ul class="list-unstyled">
+
+      <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">Terms and conditions</a></li>
+
+      <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">Privacy policy</a></li> 
+
+      <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">FAQ</a></li>
+
+    </ul>
+
+   </div>
+
+   <div class="col-sm-12 col-md-6 col-lg-4">
+
+    <h6 class=" fw-bolder fs-6 text-light">Support & contact</h6>
+
+    <ul class="list-unstyled">
+
+      <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">Support us</a></li>
+
+      <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">About us</a></li> 
+
+    </ul>
+
+   </div>
+
+   </div>
+
+ </div>
+
+</div>
+
+<div class="container text-center text-light mt-4">&copy; CryptAdvisor - Since 2022 - All rights reserved </div>
+
 </footer>
 
 </div>
@@ -80,44 +128,6 @@ $(document).ready(function(){
 </script>
 </body>
 </html>
-<!-- 
-<footer class="pt-3 mt-auto  w-100 ">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <span class="d-block">
-        <a href="index.php"><img src="Templates/corps/logo CryptAdvisor.png" alt="" class="w-75 h-auto"></a>
-        </span>
-        <span class="d-block text-center">
-        <a id="lienLogoFooter" href="index.php"> 
-            <img class="logo_social" src="Templates/corps/logo_facebook.png" alt="Logo Facebook" class="w-25 h-auto logo_social"/>  
-          </a>
-
-          <a id="lienLogoFooter" href="index.php"> 
-            <img class="logo_social" src="Templates/corps/logo_twitter.png" alt="Logo Facebook" class="w-25 h-auto logo_social"/>  
-          </a>
-
-          <a id="lienLogoFooter" href="index.php"> 
-            <img class="logo_social" src="Templates/corps/logo_instagram.png" alt="Logo Facebook" class="w-25 h-auto logo_social"/>  
-          </a>
-        </span>
-
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-          
-      </div>
-
-      <div class="col-sm-12 col-md-6 col-lg-3">
-          
-      </div>
-
-      <div class="col-sm-12 col-md-6 col-lg-3">
-
-      </div>
-    </div>
-  </div>
-</footer> -->
-
 
 
 
