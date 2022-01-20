@@ -8,7 +8,6 @@ class ContAccueil{
 
     public function __construct(){
         $this->vue = new VueAccueil();
-        
         $this->modele = new ModeleAccueil();
     }
 

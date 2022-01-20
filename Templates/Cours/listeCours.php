@@ -12,7 +12,7 @@ for($coursCompteur=0; $coursCompteur < $nbCoursAAfficher; $coursCompteur++){
         <div class="container">
                  <div class="d-grid gap-10">
                     <div class="p-2">
-                        <a href="index.php?module=Cours&action=cours&idCours=<?$idCours?>">
+                        <a href="index.php?module=Cours&action=cours&idCours=<?=$idCours?>">
                             <div class="container articles">
                                 <div class="jumbotron">
                                     <h1 class="display-6"> <?=$titre?></h1>

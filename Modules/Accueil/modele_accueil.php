@@ -14,7 +14,7 @@ class ModeleAccueil extends Connexion{
     public function last3articles(){
         $req = self::$bdd->prepare("SELECT * from Article ORDER BY dateCreaArticle DESC LIMIT 3;");
         $req->execute();
-        $res = $req->fetchAll();
+        $res = $req->fetchAll(PDO::FETCH_ASSOC);
         return $res;
     }
 }

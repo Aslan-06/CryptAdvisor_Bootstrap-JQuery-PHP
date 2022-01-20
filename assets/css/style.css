@@ -4,6 +4,7 @@
 body{
     min-width: 100%;
     background: #0b0e11;
+    color:white;
 }
 
 #wrapper{
@@ -14,12 +15,12 @@ body{
 
 #bodyContent{
     display: block;
-    margin: 0  0 200px 0;
 }
 
 
 a{
     text-decoration: none;
+    margin:0px;
 }
 .background-nav {
     background-color: #181a20;
@@ -33,14 +34,14 @@ a{
 }
 #img_logo {
     width:308px;
-    height:120px;
+    margin:0px;
 }
 #lien_logo{
-    margin-left: 66px;
-    margin-top: 29px;
-    width:308px;
-    height:120px;
-    display: inline-block;
+    margin-left: 50px;
+    margin-top: 15px;
+    width:max-content;
+    height:max-content;
+    display: inline;
 }
 
 #navEtBtns_connexion{
@@ -51,8 +52,6 @@ a{
     margin-right: 66px;
 }
 #navigateur {
-    width:auto;
-    height: auto;
     color:white;
 	display: inline-block;
     margin-top: 66px;
@@ -98,6 +97,46 @@ nav a{
     display:block;
 }
 
+#p-accueuil{
+    display:inline-block;
+    width: 650px;
+    margin-left: 50px;
+    color: lightslategrey;
+}
+#img1{
+    width:400px;
+    display:inline-block;
+    float:right;
+    margin-right: 150px;
+}
+
+.slideImg{
+    width: 700px;
+    margin:auto;
+}
+.lienSlide{
+    font-size: 20px;
+    font-weight: bold;
+    color:#cd853f;
+}
+
+#affichageProfil{
+    background-color: rgb(62,62,62);
+    padding: 20px;
+    border: 10px gray double;
+}
+.lienVersFavoris{
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 15px;
+    color: #cd853f;
+}
+.lienDemandesPromotion{
+    font-size: 20px;
+    font-weight: bold;
+    color: #cd853f;
+}
+
 #dropdownDemandes{
     width: max-content;
 }
@@ -111,19 +150,19 @@ nav a{
     margin-bottom: 10px;
 }
 
-#creerArticleH2{
+.H2{
     display: inline;
     color:#cd853f;
     font-weight: bold;
 }
+.H2center{
+    display: block;
+    text-align:center;
+}
 #divFormCreationArticle{   
     margin-top:40px;
 }
-#creerArticleH2{
-    justify-content: center;
-}
 #formCreationArticle{
-    margin-bottom: 50px;
     padding: 15px;
     padding-bottom: 0px;
     background-color: #222222;
@@ -212,20 +251,74 @@ nav a{
     color:wheat;
 }
 
+.demandes-creation{
+    padding: 20px;
+    border:1px gray solid;
+    border-radius: 15px;
+    background-color: rgb(25,25,25);
+    color:wheat;
+}
+.demandeDeQui{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0px;
+    color: lightslategray;
+}
+.demandeInfos{
+    display: inline-block;
+}
+.imgDemandes{
+    width: 20px;
+}
+.btnsAccept{
+    padding: 10px;
+    background-color: wheat;
+    border:1px lightslategray solid;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.btnsAccept p{
+    display: inline;
+    font-weight: bold;
+}
+.btnsRefus{
+    padding: 10px;
+    border:1px lightslategray solid;
+    border-radius: 10px;
+    background-color: wheat;
+}
+.btnsRefus p{
+    display: inline;
+    font-weight: bold;
+}
+.btnsDemandes{
+    margin-right: 30px;
+    margin-top: 40px;
+    float: right;
+}
 
-
-.logo_social{
+.logo-social{
+    display:inline;
     width: 30px;
     height: 30px;
-    float: left;
-    margin-right: 30px;
     margin-top: 10px;
+    margin-right: 20px;
 }
 
 .grasEtBlanc{
     color: white;
     font-weight: bold;
 }
+
+.forms{
+    background-color: rgb(62,62,62);
+    color: darkgoldenrod;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+}
+
 /*Partie desabonnement*/
 
 #titreDesabo{
@@ -252,11 +345,6 @@ nav a{
     width: 35px;
 }
 
-.container {
-  height: 200px;
-  position: relative;
-}
-
 .vertical-center {  
   margin: 0;
   position: absolute;
@@ -266,8 +354,18 @@ nav a{
   margin-left: 415px;
 }
 
+.createursNoms{
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(62,62,62);
+    border: 6px lightslategray double;
+    border-radius: 20px;
+    margin-top:20px;
+}
+
 footer{
     margin-top:50px;
+    margin-bottom: 30px;
 }
 
 /***********     COMMENTAIRE    **********/

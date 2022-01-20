@@ -1,5 +1,5 @@
 <div class='container mt-5 d-flex align-items-center justify-content-center'>
-    <div class='card' style='width: 18rem;'>
+    <div id ="affichageProfil" class='card' style='width: 26rem;'>
         <div class='card-body'>
             <h5 class='card-title'>Profil de <?= $_SESSION['pseudo'] ?></h5> 
             <p class='card-text'>Voici mon profil</p>
@@ -7,9 +7,9 @@
 
         <div class='card-body'>
             <h5 class='card-title'>Mes favoris</h5> 
-            <a href='index.php?module=Membre&action=articlefav'> Articles</a>
-            <a href='index.php?module=Membre&action=coursfav'> Cours</a>
-            <a href='index.php?module=Membre&action=forumfav'> Forums</a>
+            <a class="lienVersFavoris" href='index.php?module=Membre&action=articlefav'> Articles</a>
+            <a class="lienVersFavoris" href='index.php?module=Membre&action=coursfav'> Cours</a>
+            <a class="lienVersFavoris" href='index.php?module=Membre&action=forumfav'> Forums</a>
         </div>
 <?php
     if($_SESSION['role'] >= 3) { // on est modo ou admin, on peut voir des listes des demandes de creation
@@ -71,13 +71,13 @@
         }if($_SESSION['role'] != 4) { // admin ne demande pas de promotion
 ?>
             <div class='card-body'>
-                <a href='index.php?module=Membre&action=promotion'> Faire une demande de promotion</a>
+                <a class="lienDemandesPromotion" href='index.php?module=Membre&action=promotion'> Faire une demande de promotion</a>
             </div>
 <?php
         }if($_SESSION['role'] == 4){ ?>
         
         <div class='card-body'>
-                <a href='index.php?module=Membre&action=voirdemandes'> Voir les demandes de promotion</a>
+                <a class="lienDemandesPromotion" href='index.php?module=Membre&action=voirdemandes'> Voir les demandes de promotion</a>
             </div>
  <?php       }
     

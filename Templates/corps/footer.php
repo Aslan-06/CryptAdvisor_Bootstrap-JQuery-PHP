@@ -10,18 +10,18 @@
     <div class="">
 
       <div class="footer-logo">
-
-        <img src="./img/logo CryptAdvisor.png" class="img-fluid w-75">
-
+        <a href="index.php">
+            <img src="./img/logo CryptAdvisor.png" class="img-fluid w-75">
+        </a>
       </div>
 
-      <div class="socials d-flex justify-content-evenly mt-3">
+      <div class="socials mt-3">
 
-        <a href="#" class="text-reset "><i class="text-light fs-4 fa-brands fa-facebook"></i></a>
+        <a href="#" class="logo-social"><i class="text-light fs-4 fa-brands fa-facebook"></i></a>
 
-        <a href="#" class="text-reset "><i class="text-light fs-4 fa-brands fa-twitter"></i></a>
+        <a href="#" class="logo-social"><i class="text-light fs-4 fa-brands fa-twitter"></i></a>
 
-        <a href="#" class="text-reset "><i class="text-light fs-4 fa-brands fa-instagram"></i></a>
+        <a href="#" class="logo-social"><i class="text-light fs-4 fa-brands fa-instagram"></i></a>
 
       </div>
 
@@ -37,19 +37,19 @@
 
      <ul class="list-unstyled">
 
-       <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">Cours</a></li>
+       <li class="text-light"><a href="index.php?module=Cours" class="text-decoration-none text-reset text-light">Cours</a></li>
 
        
 
-       <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">Formations</a></li>
+       <li class="text-light"><a href="index.php?module=Cours" class="text-decoration-none text-reset text-light">Formations</a></li>
 
        
 
-       <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">Forums</a></li>
+       <li class="text-light"><a href="index.php?module=Forum" class="text-decoration-none text-reset text-light">Forums</a></li>
 
        
 
-       <li class="text-light"><a href="#" class="text-decoration-none text-reset text-light">Articles</a></li>
+       <li class="text-light"><a href="index.php?module=Article" class="text-decoration-none text-reset text-light">Articles</a></li>
 
 
      </ul>

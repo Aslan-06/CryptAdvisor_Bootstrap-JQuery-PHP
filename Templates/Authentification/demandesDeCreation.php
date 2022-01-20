@@ -1,4 +1,4 @@
-    <h1 id="h1Demandes">Demandes de creation de <?= $_SESSION['demandesDe'] ?></h1>
+    <h1 class="H2 H2center" id="h1Demandes">Demandes de creation des <?php $des = $_SESSION['demandesDe']; if($_SESSION['demandesDe'] != "cours") $des = $des.'s'; echo $des ?></h1>
 
 <?php
     $demandes;
@@ -27,12 +27,17 @@
                     <div class="p-2">
                         <div class="container demandes-creation">
                             <div class="jumbotron">
-                                <a href="index.php?module=Authentification&action=demande-creation-articles&id=<?=''.$demande['id'].''?>">
-                                    <h1 class="display-6"> <?=$demande['titre']?></h1>
-                                </a>
-                                <p class="lead articlesParagraph"> <?=$demande['contenu']?></p>
-                                <button class="btnsAccept" id="buttonAccept<?= $demande['id'] ?>"><img src="img/accept.png" alt="accepter"><p>Accepter</p></button>
-                                <button class="btnsRefus" id="buttonRefus<?= $demande['id'] ?>"><img src="img/refus.png" alt="refuser"><p>Refuser</p></button>
+                                <div class="demandeInfos">
+                                    <a href="index.php?module=Authentification&action=demande-creation-articles&id=<?=''.$demande['id'].''?>">
+                                        <p class="demandeDeQui" >Demande de <?=$demande['pseudoUtilisateur']?></p>
+                                        <h1 class="H2 display-6"> <?=$demande['titre']?></h1>
+                                    </a>
+                                    <p class="lead articlesParagraph"> <?=$demande['contenu']?></p>
+                                </div>
+                                <div class="btnsDemandes">
+                                    <button class="btnsAccept" id="buttonAccept<?= $demande['id'] ?>"><img class="imgDemandes" src="img/accept.png" alt="accepter"><p>Accepter</p></button>
+                                    <button class="btnsRefus" id="buttonRefus<?= $demande['id'] ?>"><img class="imgDemandes" src="img/refus.png" alt="refuser"><p>Refuser</p></button>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -7,11 +7,11 @@
     }?>
 </div>
 
-<form action='index.php?module=Authentification&action=connexionForm' method='post'>
+<form class="forms" action='index.php?module=Authentification&action=connexionForm' method='post'>
     <div class='row justify-content-around align-items-center'>
 
         <div class='col-sm-12 col-md-5'>
-            <h3 class='text-muted mb-4'>Connexion</h3>
+            <h3 class='mb-4  H2 H2center'>Connexion</h3>
             <div class='form-floating mb-3'>
                 <input name='pseudo' type='text' class='form-control' id='pseudo'>
                 <label for='pseudo'>Votre Pseudo</label>

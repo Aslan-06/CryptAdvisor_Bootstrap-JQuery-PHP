@@ -1,4 +1,4 @@
-    <h2>Formations</h2>
+    <h2 class="H2 H2center">Formations</h2>
 <?php
     $nbFormations = count($_SESSION['listeFormations']);
     if(isset($_SESSION['role'])){

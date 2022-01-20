@@ -12,7 +12,7 @@
                 $req->execute();
                 $idUtilisateur = $req->fetch(PDO::FETCH_ASSOC)['idUtilisateur'];
                 
-                $req = self::$bdd->prepare("INSERT INTO Cours(titre, contenu, idUtilisateur, idFormation) VALUES(?,?,?)");
+                $req = self::$bdd->prepare("INSERT INTO Cours(titre, contenu, idUtilisateur, idFormation) VALUES(?,?,?,?)");
                 $req->execute(array($titre, $contenu, $idUtilisateur, $idFormation));
 
                 echo 1;
