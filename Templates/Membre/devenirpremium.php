@@ -7,11 +7,11 @@
     }?>
 </div>
 
-<form action='index.php?module=Membre&action=devenirpremium' method='post'>
+<form class="forms" action='index.php?module=Membre&action=devenirpremium' method='post'>
     <div class='row justify-content-around align-items-center'>
 
         <div class='col-sm-12 col-md-5'>
-            <h3 class='text-muted mb-4'>Devenir premium pour seulement 39.99$/mois</h3>
+            <h3 class='mb-4'>Devenir premium pour seulement 39.99$/mois</h3>
             <div class='form-floating mb-3'>
                 <input name='Nomcarte' type='text' class='form-control' id='Nomcarte' placeholder=''>
                 <label for='Nomcarte'>Nom sur la carte</label>

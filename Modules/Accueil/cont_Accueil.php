@@ -8,7 +8,6 @@ class ContAccueil{
 
     public function __construct(){
         $this->vue = new VueAccueil();
-        
         $this->modele = new ModeleAccueil();
     }
 
@@ -18,10 +17,10 @@ class ContAccueil{
     public function search(){
         if(isset($_POST["tag"]) and !empty($_POST["tag"])){
             $tag = $_POST["tag"];
-            $data = $this->modele->findIdHash($tag);
+            $data = $this->modele->findArticle($tag);
             if(!empty($data)){
                 foreach($data as $article){
-                    $article = $this->modele->findArticle($article->idCours);
+                    $article = $article;
                     include_once "./Templates/corps/article.php";
                 }
             }  else{
@@ -29,11 +28,8 @@ class ContAccueil{
             }
         }
     }
-    
-
-
-
-
-
-    
+    public function derniers(){
+        $derniersarticles = $this->modele->last3articles();
+        $_SESSION['derniersarticles'] = $derniersarticles;
+    }
 }

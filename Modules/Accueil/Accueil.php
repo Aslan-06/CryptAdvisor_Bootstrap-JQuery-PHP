@@ -24,6 +24,7 @@ class Accueil {
                 $this->controleur->search();
                 break;
             default:
+                $this->controleur->derniers();
                 $this->controleur->accueil();
                 break;
         }

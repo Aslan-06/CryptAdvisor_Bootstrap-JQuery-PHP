@@ -28,7 +28,7 @@ class ContConnexion{
                     header("Location: index.php?module=Authentification&action=connexion");
                 }
         } else {
-            $pseudo =htmlspecialchars( $_POST['pseudo']);
+            $pseudo =htmlspecialchars($_POST['pseudo']);
             $password = htmlspecialchars($_POST['password']);
             $user = $this->modele->getUser($pseudo);
 
@@ -113,6 +113,12 @@ class ContConnexion{
     public function profile(){
         $this->modele->initDemandesCreation();
         $this->vue->profile();
+    }
+
+    public function recupererDemandesCreation($deQuoi){
+        $_SESSION['demandesDe'] = $deQuoi;
+        $this->modele->initDemandesCreation();
+        $this->vue->afficherDemandes();
     }
 
 }

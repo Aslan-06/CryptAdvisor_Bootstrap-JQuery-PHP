@@ -41,6 +41,15 @@ class Authentification {
             case "inscription":
                 $this->controleur->inscription();
                 break;
+            case "demandes-creation-cours":
+                $this->controleur->recupererDemandesCreation("cours");
+                break;
+            case "demandes-creation-articles":
+                $this->controleur->recupererDemandesCreation("article");
+                break;
+            case "demandes-creation-forums":
+                $this->controleur->recupererDemandesCreation("forum");
+                break;
             default:
                 echo"accès interdit";
                 break;

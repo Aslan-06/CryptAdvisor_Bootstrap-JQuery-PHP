@@ -6,13 +6,13 @@
         unset($_SESSION['erreur']);
     }?>
 </div>
-<form action='index.php?module=Authentification&action=inscriptionForm' method='post'>
+<form class="forms" action='index.php?module=Authentification&action=inscriptionForm' method='post'>
     <div class='row justify-content-around align-items-center'>
 
 
         <div class='col-sm-12 col-md-5'>
 
-            <h3 class='text-muted mb-4'>Inscription</h3>
+            <h3 class='mb-4 H2 H2center'>Inscription</h3>
             <div class='form-floating mb-3'>
                 <input name='nom' type='text' class='form-control' id='nom' placeholder='Nom'>
                 <label for='nom'>Nom</label>
